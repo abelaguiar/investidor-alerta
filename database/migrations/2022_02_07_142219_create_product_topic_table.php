@@ -13,8 +13,11 @@ class CreateProductTopicTable extends Migration
      */
     public function up()
     {
-        Schema::table('product_topic', function (Blueprint $table) {
-            //
+        Schema::create('product_topic', function (Blueprint $table) {
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('topic_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('topic_id')->references('id')->on('topics');
         });
     }
 
@@ -25,8 +28,6 @@ class CreateProductTopicTable extends Migration
      */
     public function down()
     {
-        Schema::table('product_topic', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('product_topic');
     }
 }

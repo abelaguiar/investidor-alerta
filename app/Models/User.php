@@ -55,12 +55,12 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function VISITOR()
+    public function visitor()
     {
         return $this->hasOne(VISITOR::class);
     }
 
-    public function isRoleVISITOR()
+    public function isRoleVisitor()
     {
         return !is_null($this->role_id) && $this->role_id == Role::VISITOR;
     }
@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function addPictureProfile(UploadedFile $picture): void
     {
-        $destinationFolder = 'VISITORs';
+        $destinationFolder = 'visitors';
 
         $relativePath = $picture->store($destinationFolder, 'public');
 
@@ -86,16 +86,6 @@ class User extends Authenticatable
         foreach ($users as $user) {
 
             Mail::to($user->email)->send(new UserAuthorizedMail());
-        }
-    }
-
-    public function scopeNotificationShopApproved(): void
-    {
-        $users = User::where('role_id', Role::ADMINISTRATOR)->get();
-
-        foreach ($users as $user) {
-
-            Mail::to($user->email)->send(new ShopApprovedMail());
         }
     }
 
