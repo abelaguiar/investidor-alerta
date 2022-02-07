@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8" />
-    <title>Link Money - Integrando Profissionais em potencial</title>
+    <title>Investidor Alerta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="InvestidorAlerta" name="Investidor alerta" />
     <meta content="Limiteweb" name="Robson Di Souza" />
@@ -138,7 +138,7 @@
                                         <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                        <a href="{{ route('shops.index') }}" class="dropdown-item">Listar Lojas</a> 
+                                        <a href="{{ route('dashboard') }}" class="dropdown-item">Listar Lojas</a> 
                                     </div>
                                 </li>
                                 @if (auth()->user()->isAdmin())
@@ -178,7 +178,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script>© LinkMoney.
+                        <script>document.write(new Date().getFullYear())</script>© InvestidorAlerta.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-end d-none d-sm-block">

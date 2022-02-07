@@ -1,7 +1,4 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-        </x-slot>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -44,5 +41,4 @@
                 </p>
             </div>
         </form>
-    </x-auth-card>
 </x-guest-layout>

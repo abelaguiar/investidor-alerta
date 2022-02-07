@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8" />
-    <title>Link Money - Integrando Profissionais em potencial</title>
+    <title>Investidor Alerta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="LikMoney" name="Integrando Profissionais em potencial" />
     <meta content="Limiteweb" name="Robson Di Souza" />
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="mt-5 text-center">
-                    <p>© <script>document.write(new Date().getFullYear())</script> LinkMoney. Desenvovido por Limiteweb</p>
+                    <p>© <script>document.write(new Date().getFullYear())</script> InvestidorAlerta. Desenvovido por Limiteweb</p>
                 </div>
             </div>
         </div>
