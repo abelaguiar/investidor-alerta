@@ -40,9 +40,9 @@ class Shop extends Model
         return $this->belongsTo(City::class);
     }
 
-    public function representatives()
+    public function VISITORs()
     {
-        return $this->belongsToMany(Representative::class)
+        return $this->belongsToMany(VISITOR::class)
             ->withPivot('approved');
     }
 

@@ -1,4 +1,4 @@
-function shopsDropdown(representativeId, shopId = 'undefined', shopName = '#shopId') {
+function shopsDropdown(VISITORId, shopId = 'undefined', shopName = '#shopId') {
 
     var shop = $(shopName);
     var option = $('<option>');
@@ -8,7 +8,7 @@ function shopsDropdown(representativeId, shopId = 'undefined', shopName = '#shop
     option.text('Selecione um Representante');
     shop.append(option);
 
-    $.getJSON('/api/representative/' + representativeId + '/shops', function (data) {
+    $.getJSON('/api/VISITOR/' + VISITORId + '/shops', function (data) {
         $.each(data, function (key, item) {
             var option = $('<option>');
             option.val(key);
@@ -21,17 +21,17 @@ function shopsDropdown(representativeId, shopId = 'undefined', shopName = '#shop
     });
     return false;
 }
-function representativesDropdown(shopId, representiveId = 'undefined', representativeName = '#representativeId') {
+function VISITORsDropdown(shopId, representiveId = 'undefined', VISITORName = '#VISITORId') {
 
-    var representative = $(representativeName);
+    var VISITOR = $(VISITORName);
     var option = $('<option>');
 
-    representative.find('option').remove();
+    VISITOR.find('option').remove();
     option.val(null);
     option.text('Selecione um Representante');
-    representative.append(option);
+    VISITOR.append(option);
 
-    $.getJSON('/api/shop/' + shopId + '/representatives', function (data) {
+    $.getJSON('/api/shop/' + shopId + '/VISITORs', function (data) {
         $.each(data, function (key, item) {
             var option = $('<option>');
             option.val(key);
@@ -39,7 +39,7 @@ function representativesDropdown(shopId, representiveId = 'undefined', represent
             if (key == representiveId)
                 option.attr("selected", "selected");
 
-            representative.append(option);
+            VISITOR.append(option);
         });
     });
     return false;

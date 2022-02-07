@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\LocationController;
-use App\Http\Controllers\Api\RepresentativeController;
+use App\Http\Controllers\Api\VISITORController;
 use App\Http\Controllers\Api\ShopController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;

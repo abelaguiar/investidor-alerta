@@ -210,7 +210,7 @@ return [
         'document' => 'documento',
         'telephone' => 'telefone',
         'shop_id' => 'loja',
-        'representative_id' => 'representante',
+        'VISITOR_id' => 'representante',
         'picture_profile' => 'foto de perfil'
     ],
 ];

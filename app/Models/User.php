@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Mail\Representatives\ShopApprovedMail;
+use App\Mail\VISITORs\ShopApprovedMail;
 use App\Mail\Users\UserAuthorizedMail;
 use App\Mail\Users\UserCreatedMail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -55,14 +55,14 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function representative()
+    public function VISITOR()
     {
-        return $this->hasOne(Representative::class);
+        return $this->hasOne(VISITOR::class);
     }
 
-    public function isRoleRepresentative()
+    public function isRoleVISITOR()
     {
-        return !is_null($this->role_id) && $this->role_id == Role::REPRESENTATIVE;
+        return !is_null($this->role_id) && $this->role_id == Role::VISITOR;
     }
 
     public function isAdmin()
@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function addPictureProfile(UploadedFile $picture): void
     {
-        $destinationFolder = 'representatives';
+        $destinationFolder = 'VISITORs';
 
         $relativePath = $picture->store($destinationFolder, 'public');
 

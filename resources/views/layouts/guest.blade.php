@@ -15,8 +15,6 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body class="authentication-bg">

@@ -34,6 +34,6 @@ Route::middleware(['auth'])->group(function () {
     //Route::get('shops/search', [ShopController::class, 'search'])->name('shops.search');
     //Route::get('shops/search-cnpj', [ShopController::class, 'searchByCnpj'])->name('shops.search.cnpj');
     //Route::post('shops/search-cnpj/processing', [ShopController::class, 'searchByCnpj'])->name('shops.search.cnpj.processing');
-    //Route::post('shops/{shop}/processing-to-assign-representative', [ShopController::class, 'show'])->name('shops.show.processing');
+    //Route::post('shops/{shop}/processing-to-assign-VISITOR', [ShopController::class, 'show'])->name('shops.show.processing');
     //Route::resource('shops', ShopController::class);
 });

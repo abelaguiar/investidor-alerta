@@ -16,8 +16,6 @@
     <link href="/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     {{ $styles ?? '' }}
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body 
@@ -203,7 +201,6 @@
 <script src="/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
 
 <!-- apexcharts -->
-<script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
 <script src="/assets/js/pages/dashboard.init.js"></script>
 
 <!-- App js -->

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail\Representatives;
+namespace App\Mail\VISITORs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -29,6 +29,6 @@ class ShopApprovedMail extends Mailable
     public function build()
     {
         return $this->subject('Loja cadastrada por representante')
-            ->markdown('emails.representative.shop-approved');
+            ->markdown('emails.VISITOR.shop-approved');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commission;
-use App\Models\Representative;
+use App\Models\VISITOR;
 
 class DashboardController extends Controller
 {

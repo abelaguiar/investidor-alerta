@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RepresentativeRequest extends FormRequest
+class VISITORRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class RepresentativeRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|string|max:255',
-            'cpf' => 'required|unique:representatives',
+            'cpf' => 'required|unique:VISITORs',
             'cep' => 'required',
             'address' => 'required|string|max:255',
             'address_number' => 'required',

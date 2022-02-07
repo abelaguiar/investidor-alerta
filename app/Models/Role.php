@@ -11,7 +11,7 @@ class Role extends Model
     use HasFactory, SoftDeletes;
 
     const ADMINISTRATOR = 1;
-    const REPRESENTATIVE = 2;
+    const VISITOR = 2;
 
     /**
      * The attributes that are mass assignable.

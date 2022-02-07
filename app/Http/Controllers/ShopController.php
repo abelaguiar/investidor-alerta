@@ -20,16 +20,16 @@ class ShopController extends Controller
     {
         $shops = Shop::paginate(10);
 
-        if (auth()->user()->isRoleRepresentative()) {
+        if (auth()->user()->isRoleVISITOR()) {
 
             $userId = auth()->user()->id;
 
             $builder = (function (Builder $query) use ($userId) {
                 $query->where('user_id', $userId)
-                    ->where('representative_shop.approved', true);
+                    ->where('VISITOR_shop.approved', true);
             });
 
-            $shops = Shop::whereHas('representatives', $builder)
+            $shops = Shop::whereHas('VISITORs', $builder)
                 ->paginate(10);
         }
 
@@ -51,10 +51,10 @@ class ShopController extends Controller
 
             $shop = Shop::where('cnpj', $cnpj)->first();
 
-            if (!is_null($shop) && auth()->user()->isRoleRepresentative()) {
+            if (!is_null($shop) && auth()->user()->isRoleVISITOR()) {
 
-                $bondExist = $shop->representatives->contains(
-                    auth()->user()->representative
+                $bondExist = $shop->VISITORs->contains(
+                    auth()->user()->VISITOR
                 );
 
                 if ($bondExist) {
@@ -102,9 +102,9 @@ class ShopController extends Controller
 
         flash('Salvo com sucesso!')->success();
 
-        if (auth()->user()->isRoleRepresentative()) {
+        if (auth()->user()->isRoleVISITOR()) {
 
-            $shop->representatives()->attach(auth()->user()->representative->id);
+            $shop->VISITORs()->attach(auth()->user()->VISITOR->id);
 
             return redirect()->route('dashboard');
         }
@@ -122,11 +122,11 @@ class ShopController extends Controller
     {
         if ($request->isMethod('post')) {
 
-            if (auth()->user()->isRoleRepresentative()) {
+            if (auth()->user()->isRoleVISITOR()) {
 
                 flash('Solicitação de vinculação criada com sucesso!')->success();
 
-                $shop->representatives()->attach(auth()->user()->representative->id);
+                $shop->VISITORs()->attach(auth()->user()->VISITOR->id);
                 
                 return redirect()->route('dashboard');
             }
@@ -174,9 +174,9 @@ class ShopController extends Controller
     {
         $shop->delete();
 
-        if (auth()->user()->isRoleRepresentative()) {
+        if (auth()->user()->isRoleVISITOR()) {
 
-            $shop->representatives()->detach(auth()->user()->representative->id);
+            $shop->VISITORs()->detach(auth()->user()->VISITOR->id);
         }
 
         flash('Excluído com sucesso!')->success();

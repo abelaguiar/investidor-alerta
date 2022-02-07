@@ -26,7 +26,7 @@ class CommissionRequest extends FormRequest
         return [
             'month' => 'required',
             'shop_id' => 'required',
-            'representative_id' => 'required',
+            'VISITOR_id' => 'required',
             'value' => 'required',
             'status' => 'required',
         ];

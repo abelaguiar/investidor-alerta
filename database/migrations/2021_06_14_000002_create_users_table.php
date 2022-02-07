@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique();
             $table->string('password');
             $table->unsignedBigInteger('role_id');
-            $table->boolean('authorized')->default(false);
+            $table->boolean('authorized')->default(true);
             $table->string('picture_profile')->default('/assets/images/users/default.png');
             $table->rememberToken();
             $table->timestamps();
