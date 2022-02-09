@@ -18,4 +18,9 @@ class Product extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function topics()
+    {
+        return $this->belongsToMany(Topic::class, 'product_topic');
+    }
 }
