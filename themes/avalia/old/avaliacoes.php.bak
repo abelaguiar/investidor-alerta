@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<title>Investidor Alerta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="LikMoney" name="Integrando Profissionais em potencial" />
+<meta content="Limiteweb" name="Robson Di Souza" />
+<link rel="shortcut icon" href="assets/icon.png">
+
+<!-- Bootstrap Css -->
+<link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<!-- Icons Css -->
+<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<!-- App Css-->
+<link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+ <link href="http://minible-h-light.laravel.themesbrand.com/assets/libs/jquery-bar-rating/jquery-bar-rating.min.css" rel="stylesheet"
+        type="text/css" />
+</head>
+
+<body data-layout="horizontal" data-topbar="colored" style="background:url(assets/images/background.jpg) no-repeat fixed; background-size: cover">
+<div id="preloader">
+  <div id="status">
+    <div class="spinner"> <img src="assets/load.png"> </div>
+  </div>
+</div>
+<div id="layout-wrapper">
+  <header id="page-topbar">
+    <div class="navbar-header">
+      <div class="d-flex">
+        <div class="navbar-brand-box"> <a href="index.php" class="logo logo-dark"> <span class="logo-sm"> <img src="assets/images/logo-sm.png" alt="" height="70"> </span> <span class="logo-lg"> <img src="assets/images/logo-dark.png" alt="" height="70"> </span> </a> <a href="index.php" class="logo logo-light"> <span class="logo-sm"> <img src="assets/images/logo-sm.png" alt="" height="70"> </span> <span class="logo-lg"> <img src="assets/images/logo-light.png" alt="" height="70" style="padding-top: 15px; "> </span> </a> </div>
+        <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content"> <i class="fa fa-fw fa-bars"></i> </button>
+        <?php include_once('includes/buscar.php'); ?>
+      </div>
+      <div class="d-flex">
+        <div class="dropdown d-inline-block d-lg-none ms-2">
+          <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="uil-search"></i> </button>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+            <form class="p-3">
+              <div class="m-0">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Recipient's username">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <?php include_once('includes/perfil.php'); ?>
+      </div>
+    </div>
+    <?php include_once('includes/menu.php'); ?>
+  </header>
+  <div class="main-content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12"> </div>
+        </div>
+		<div class="row">
+    
+
+   
+
+  
+
+   
+</div>
+<div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-5">Vertical Timeline</h4>
+                    <div class="">
+                        <ul class="verti-timeline list-unstyled">
+                            <li class="event-list">
+                                <div class="event-date text-primar">03 de Maio</div>
+                                <h5>Gustavo Cuencas</h5>
+                                <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
+                            <div class="br-wrapper br-theme-bars-1to10"><select id="rating-1to10" name="rating" autocomplete="off" style="display: none;">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7" selected="">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select><div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1" class="br-selected"></a><a href="#" data-rating-value="2" data-rating-text="2" class="br-selected"></a><a href="#" data-rating-value="3" data-rating-text="3" class="br-selected"></a><a href="#" data-rating-value="4" data-rating-text="4" class="br-selected"></a><a href="#" data-rating-value="5" data-rating-text="5" class="br-selected"></a><a href="#" data-rating-value="6" data-rating-text="6" class="br-selected"></a><a href="#" data-rating-value="7" data-rating-text="7" class="br-selected br-current"></a><a href="#" data-rating-value="8" data-rating-text="8" class=""></a><a href="#" data-rating-value="9" data-rating-text="9" class=""></a><a href="#" data-rating-value="10" data-rating-text="10" class=""></a><div class="br-current-rating">7</div></div></div>
+							</li>
+                            <li class="event-list">
+                                <div class="event-date text-primar">08 May</div>
+                                <h5>Timeline event Two</h5>
+                                <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit illo inventore
+                                    veritatis</p><span class="text-primary">Gustavo Cuencas</span>
+                            </li>
+                            <li class="event-list">
+                                <div class="event-date text-primar">11 May</div>
+                                <h5>Timeline event Three</h5>
+                                <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit</p><span class="text-primary">Gustavo Cuencas</span>
+                            </li>
+                            <li class="event-list">
+                                <div class="event-date text-primar">16 May</div>
+                                <h5>Timeline event Four</h5>
+                                <p class="text-muted">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                                    quam</p><span class="text-primary">Gustavo Cuencas</span>
+                            </li>
+                            <li class="event-list">
+                                <div class="event-date text-primar">27 May</div>
+                                <h5>Timeline event Five</h5>
+                                <p class="text-muted">Itaque earum rerum hic tenetur a sapiente delectus maiores alias
+                                    consequatur aut</p><span class="text-primary">Gustavo Cuencas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+		<div class="row">
+		
+		
+       <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+		
+            <h4 class="card-title mb-4">Histórico de Lojas</h4>
+            <ol class="activity-feed mb-0 ps-2" data-simplebar style="max-height: 336px;">
+              <li class="feed-item">
+                <div class="feed-item-list">
+                  <p class="text-muted mb-1 font-size-13">Hoje<small class="d-inline-block ms-1">12:20 pm</small></p>
+                  <p class="mb-0">Loja Magazine Luiza, cadastrada para o respresentante: <span class="text-primary"><br>Gustavo Cuencas</span></p>
+                </div>
+              </li>
+              <li class="feed-item">
+                <div class="feed-item-list">
+                  <p class="text-muted mb-1 font-size-13">Hoje<small class="d-inline-block ms-1">12:20 pm</small></p>
+                  <p class="mb-0">Loja Magazine Luiza, cadastrada para o respresentante: <span class="text-primary"><br>Gustavo Cuencas</span></p>
+                </div>
+              </li>
+              <li class="feed-item">
+                <div class="feed-item-list">
+                  <p class="text-muted mb-1 font-size-13">Hoje<small class="d-inline-block ms-1">12:20 pm</small></p>
+                  <p class="mb-0">Loja Magazine Luiza, cadastrada para o respresentante: <span class="text-primary"><br>Gustavo Cuencas</span></p>
+                </div>
+              </li>
+              <li class="feed-item">
+                <div class="feed-item-list">
+                  <p class="text-muted mb-1 font-size-13">Hoje<small class="d-inline-block ms-1">12:20 pm</small></p>
+                  <p class="mb-0">Loja Magazine Luiza, cadastrada para o respresentante: <span class="text-primary"><br>Gustavo Cuencas</span></p>
+                </div>
+              </li>
+            </ol>
+       
+		  </div>
+        </div>
+      </div>
+    </div>
+		
+        
+      
+        
+		
+		
+		
+	
+        
+      </div>
+    </div>
+    <?php include_once('includes/rodape.php'); ?>
+  </div>
+</div>
+<div class="rightbar-overlay"></div>
+
+<!-- JAVASCRIPT --> 
+<script src="assets/libs/jquery/jquery.min.js"></script> 
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="assets/libs/metismenu/metisMenu.min.js"></script> 
+<script src="assets/libs/simplebar/simplebar.min.js"></script> 
+<script src="assets/libs/node-waves/waves.min.js"></script> 
+<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script> 
+<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script> 
+
+<!-- apexcharts --> 
+<script src="assets/libs/apexcharts/apexcharts.min.js"></script> 
+<script src="assets/js/pages/dashboard.init.js"></script> 
+
+<!-- App js --> 
+        <!-- apexcharts -->
+
+ <!-- App js -->
+
+     <!-- Sweet Alerts js -->
+    <script src="http://minible-h-light.laravel.themesbrand.com/assets/libs/jquery-bar-rating/jquery-bar-rating.min.js"></script>
+
+    <!-- Range slider init js-->
+    <script src="http://minible-h-light.laravel.themesbrand.com/assets/js/pages/rating-init.js"></script>
+ 
+
+</body>
+</html>

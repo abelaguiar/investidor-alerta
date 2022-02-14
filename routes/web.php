@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AvaliationController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -30,6 +32,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('user/authorized', [UserController::class, 'requestAuthorization'])->name('user.request.authorization');
     Route::get('user/{user}/authorized', [UserController::class, 'authorizeUser'])->name('user.authorize');
     Route::resource('users', UserController::class);
+
+    Route::resource('avaliations', AvaliationController::class);
+    
+    Route::get('companies/search', [CompanyController::class, 'search'])->name('companies.search');
+    Route::resource('companies', CompanyController::class);
 
     //Route::get('shops/search', [ShopController::class, 'search'])->name('shops.search');
     //Route::get('shops/search-cnpj', [ShopController::class, 'searchByCnpj'])->name('shops.search.cnpj');

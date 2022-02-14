@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AvaliationRequest;
 use App\Models\Avaliation;
+use App\Models\Company;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AvaliationController extends Controller
@@ -24,7 +27,10 @@ class AvaliationController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::with('topics')->get();
+        $companies = Company::pluck('name', 'id');
+
+        return view('avaliations.create', compact('products', 'companies'));
     }
 
     /**
@@ -33,53 +39,17 @@ class AvaliationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AvaliationRequest $request)
     {
-        //
-    }
+        $avaliation = Avaliation::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Avaliation  $avaliation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Avaliation $avaliation)
-    {
-        //
-    }
+        if ($request->document) {
+            $avaliation->addDocuments($request->document);
+            $avaliation->save();
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Avaliation  $avaliation
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Avaliation $avaliation)
-    {
-        //
-    }
+        flash('Salvo com sucesso!')->success();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Avaliation  $avaliation
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Avaliation $avaliation)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Avaliation  $avaliation
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Avaliation $avaliation)
-    {
-        //
+        return back();
     }
 }

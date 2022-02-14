@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<title>Investidor Alerta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="LikMoney" name="Integrando Profissionais em potencial" />
+<meta content="Limiteweb" name="Robson Di Souza" />
+<link rel="shortcut icon" href="assets/icon.png">
+
+<!-- Bootstrap Css -->
+<link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<!-- Icons Css -->
+<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<!-- App Css-->
+<link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+</head>
+
+<body data-layout="horizontal" data-topbar="colored" style="background:url(assets/images/background.jpg) no-repeat fixed; background-size: cover">
+<div id="preloader">
+  <div id="status">
+    <div class="spinner"> <img src="assets/load.png"> </div>
+  </div>
+</div>
+<div id="layout-wrapper">
+  <header id="page-topbar">
+    <div class="navbar-header">
+      <div class="d-flex">
+        <div class="navbar-brand-box"> <a href="index.php" class="logo logo-dark"> <span class="logo-sm"> <img src="assets/images/logo-sm.png" alt="" height="70"> </span> <span class="logo-lg"> <img src="assets/images/logo-dark.png" alt="" height="70"> </span> </a> <a href="index.php" class="logo logo-light"> <span class="logo-sm"> <img src="assets/images/logo-sm.png" alt="" height="70"> </span> <span class="logo-lg"> <img src="assets/images/logo-light.png" alt="" height="70" style="padding-top: 15px; "> </span> </a> </div>
+        <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content"> <i class="fa fa-fw fa-bars"></i> </button>
+        <?php include_once('includes/buscar.php'); ?>
+      </div>
+      <div class="d-flex">
+        <div class="dropdown d-inline-block d-lg-none ms-2">
+          <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="uil-search"></i> </button>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+            <form class="p-3">
+              <div class="m-0">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Recipient's username">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <?php include_once('includes/perfil.php'); ?>
+      </div>
+    </div>
+    <?php include_once('includes/menu.php'); ?>
+  </header>
+  <div class="main-content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12"> </div>
+        </div>
+		<div class="row">
+    
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="float-end mt-2" style="position: relative;">
+                    <div id="orders-chart" style="min-height: 46px;"> <div id="apexcharts7tqnvmz" class="apexcharts-canvas apexcharts7tqnvmz apexcharts-theme-light" style="width: 45px; height: 46px;"><svg id="SvgjsSvg1059" width="45" height="46" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1061" class="apexcharts-inner apexcharts-graphical" transform="translate(0, 0)"><defs id="SvgjsDefs1060"><clipPath id="gridRectMask7tqnvmz"><rect id="SvgjsRect1063" width="51" height="47" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="gridRectMarkerMask7tqnvmz"><rect id="SvgjsRect1064" width="49" height="49" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1065" class="apexcharts-radialbar"><g id="SvgjsG1066"><g id="SvgjsG1067" class="apexcharts-tracks"><g id="SvgjsG1068" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 22.497318152626402 7.134146575498747" fill="none" fill-opacity="1" stroke="rgba(242,242,242,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="4.258536585365854" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 22.497318152626402 7.134146575498747"></path></g></g><g id="SvgjsG1070"><g id="SvgjsG1072" class="apexcharts-series apexcharts-radial-series" seriesName="seriesx1" rel="1" data:realIndex="0"><path id="SvgjsPath1073" d="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 7.886204749611055 27.248309913566267" fill="none" fill-opacity="0.85" stroke="rgba(52,195,143,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="4.390243902439025" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="252" data:value="70" index="0" j="0" data:pathOrig="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 7.886204749611055 27.248309913566267"></path></g><circle id="SvgjsCircle1071" r="13.23658536585366" cx="22.5" cy="22.5" class="apexcharts-radialbar-hollow" fill="transparent"></circle></g></g></g><line id="SvgjsLine1074" x1="0" y1="0" x2="45" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1075" x1="0" y1="0" x2="45" y2="0" stroke-dasharray="0" stroke-width="0" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1062" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                <div class="resize-triggers"><div class="expand-trigger"><div style="width: 46px; height: 47px;"></div></div><div class="contract-trigger"></div></div></div>
+                <div>
+                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">5,643</span></h4>
+                    <p class="text-muted mb-0">Total de Avaliações Positivas</p>
+                </div>
+                <p class="text-muted mt-3 mb-0"><span class="text-danger me-1"><i class="mdi mdi-arrow-down-bold me-1"></i>0.82%</span> since last week
+                </p>
+            </div>
+        </div>
+    </div> <!-- end col-->
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="float-end mt-2" style="position: relative;">
+                    <div id="orders-chart" style="min-height: 46px;"> <div id="apexcharts7tqnvmz" class="apexcharts-canvas apexcharts7tqnvmz apexcharts-theme-light" style="width: 45px; height: 46px;"><svg id="SvgjsSvg1059" width="45" height="46" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1061" class="apexcharts-inner apexcharts-graphical" transform="translate(0, 0)"><defs id="SvgjsDefs1060"><clipPath id="gridRectMask7tqnvmz"><rect id="SvgjsRect1063" width="51" height="47" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="gridRectMarkerMask7tqnvmz"><rect id="SvgjsRect1064" width="49" height="49" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1065" class="apexcharts-radialbar"><g id="SvgjsG1066"><g id="SvgjsG1067" class="apexcharts-tracks"><g id="SvgjsG1068" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 22.497318152626402 7.134146575498747" fill="none" fill-opacity="1" stroke="rgba(242,242,242,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="4.258536585365854" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 22.497318152626402 7.134146575498747"></path></g></g><g id="SvgjsG1070"><g id="SvgjsG1072" class="apexcharts-series apexcharts-radial-series" seriesName="seriesx1" rel="1" data:realIndex="0"><path id="SvgjsPath1073" d="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 7.886204749611055 27.248309913566267" fill="none" fill-opacity="0.85" stroke="rgba(52,195,143,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="4.390243902439025" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="252" data:value="70" index="0" j="0" data:pathOrig="M 22.5 7.134146341463413 A 15.365853658536587 15.365853658536587 0 1 1 7.886204749611055 27.248309913566267"></path></g><circle id="SvgjsCircle1071" r="13.23658536585366" cx="22.5" cy="22.5" class="apexcharts-radialbar-hollow" fill="transparent"></circle></g></g></g><line id="SvgjsLine1074" x1="0" y1="0" x2="45" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1075" x1="0" y1="0" x2="45" y2="0" stroke-dasharray="0" stroke-width="0" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1062" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                <div class="resize-triggers"><div class="expand-trigger"><div style="width: 46px; height: 47px;"></div></div><div class="contract-trigger"></div></div></div>
+                <div>
+                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">5,643</span></h4>
+                    <p class="text-muted mb-0">Total de Avaliações Negativas</p>
+                </div>
+                <p class="text-muted mt-3 mb-0"><span class="text-danger me-1"><i class="mdi mdi-arrow-down-bold me-1"></i>0.82%</span> since last week
+                </p>
+            </div>
+        </div>
+    </div> <!-- end col-->
+<div class="col-md-6">
+          <div class="card">
+             <img src="assets/images/banner.jpg" width="100%" height="100" class="card-img-top img-fluid img-fluid. max-width: 100%;">
+          </div>
+        </div>
+   
+</div>
+		<div class="row">
+		
+		
+       
+    </div>
+		
+        
+      
+        
+		
+		
+		
+	<div class="row">
+       
+
+        <div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE DAY TRADE</h4>
+                <p class="card-text">Análise Gráfica</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		 <div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE DAY TRADE</h4>
+                <p class="card-text">Análise de Fluxo</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		 <div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE DAY TRADE</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		 <div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE DAY TRADE</h4>
+                <p class="card-text">Mercado Americano</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE SWING TRADE</h4>
+                <p class="card-text">Mercado Americano</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE SWING TRADE</h4>
+                <p class="card-text">Análise Gráfica</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE SWING TRADE</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE ANÁLISE FUNDAMENTALISTA</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE ANÁLISE FUNDAMENTALISTA</h4>
+                <p class="card-text">Mercado Americano</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE BUY AND HOLD</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE POSITION TRADE</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE POSITION TRADE</h4>
+                <p class="card-text">Mercado Americano</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE CONTABILIDADE</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CURSO DE OPÇÕES</h4>
+                <p class="card-text">Em Geral</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ROBO</h4>
+                <p class="card-text">Day Trade</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ROBO</h4>
+                <p class="card-text">Swing Trade</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+				<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ASSINATURAS DE SINAIS</h4>
+                <p class="card-text">Swing Trade</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ASSINATURAS DE SINAIS</h4>
+                <p class="card-text">Day Trade</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ASSINATURAS DE SINAIS</h4>
+                <p class="card-text">Opções</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ASSINATURAS DE</h4>
+                <p class="card-text">Relatórios Fundamentalçistas</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ASSINATURAS DE</h4>
+                <p class="card-text">Buy And Hold</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">ASSINATURAS DE</h4>
+                <p class="card-text">Mercado Americano</p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+		<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CLUBE DE INVESTIDORES</h4>
+                <p class="card-text"><BR></p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+				<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">CORRETORAS</h4>
+                <p class="card-text"><BR></p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+				<div class="col-md-6 col-xl-3 ">
+            <div class="card card-body text-center">
+                <h5 class="display-6 mb-0">FUNDO DE INVESTIMENTOS</h4>
+                <p class="card-text"><BR></p>
+				
+                <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+
+       
+		
+    </div>
+        
+      </div>
+    </div>
+    <?php include_once('includes/rodape.php'); ?>
+  </div>
+</div>
+<div class="rightbar-overlay"></div>
+
+<!-- JAVASCRIPT --> 
+<script src="assets/libs/jquery/jquery.min.js"></script> 
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="assets/libs/metismenu/metisMenu.min.js"></script> 
+<script src="assets/libs/simplebar/simplebar.min.js"></script> 
+<script src="assets/libs/node-waves/waves.min.js"></script> 
+<script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script> 
+<script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script> 
+
+<!-- apexcharts --> 
+<script src="assets/libs/apexcharts/apexcharts.min.js"></script> 
+<script src="assets/js/pages/dashboard.init.js"></script> 
+
+<!-- App js --> 
+<script src="assets/js/app.js"></script>
+<script src="assets/chart/chart-js.min.js"></script>
+    <script src="assets/chart/chartjs.init.js"></script>
+
+ <!-- App js -->
+ <script src="assets/chart/app.min.js"></script>
+         <!-- apexcharts -->
+       <script src="http://minible-h-light.laravel.themesbrand.com/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+       <script src="http://minible-h-light.laravel.themesbrand.com/assets/js/pages/dashboard.init.js"></script>
+
+ <!-- App js -->
+ <script src="http://minible-h-light.laravel.themesbrand.com/assets/js/app.min.js"></script>
+ 
+
+</body>
+</html>

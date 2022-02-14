@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use AbelAguiar\Filter\RequestFilter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Company extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, RequestFilter;
 
     /**
      * The attributes that are mass assignable.
@@ -19,4 +20,6 @@ class Company extends Model
         'name',
         'link'
     ];
+
+    protected static $filter = 'App\Filters\CompanyFilter';
 }
