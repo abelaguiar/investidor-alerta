@@ -38,15 +38,18 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Produto</label>
-                                    <select name="product_id" id="product" class="form-control select2">
+                                    <select name="product_topic_id" id="product" class="form-control select2">
                                         <option value="">Selecione um item</option>
                                         @foreach ($products as $product)
-                                            <option value="{{ $product->id }}">
-                                                {{ $product->name }} 
-                                                @if ($product->topics->isNotEmpty())
-                                                    - {{ $product->topics->first()->name }}
-                                                @endif
-                                            </option>
+                                            @if ($product->topics->isNotEmpty())
+                                                <option value="{{ $product->id .'-'. $product->topics->first()->id }}">
+                                                    {{ $product->name }} - {{ $product->topics->first()->name }}
+                                                </option>
+                                            @else
+                                                <option value="{{ $product->id}}">
+                                                    {{ $product->name }} 
+                                                </option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>

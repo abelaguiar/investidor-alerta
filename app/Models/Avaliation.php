@@ -22,6 +22,7 @@ class Avaliation extends Model
         'phone',
         'company_id',
         'product_id',
+        'topic_id',
         'other_product',
         'date_acquisition',
         'description_experience_product',

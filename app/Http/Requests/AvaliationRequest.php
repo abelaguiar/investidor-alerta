@@ -28,7 +28,7 @@ class AvaliationRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|string',
             'company_id' => 'required',
-            'product_id' => 'required',
+            'product_topic_id' => 'required',
             'date_acquisition' => 'required',
             'description_experience_product' => 'required',
             'avaliation_count' => 'required|integer',

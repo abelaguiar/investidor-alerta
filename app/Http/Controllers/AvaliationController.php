@@ -6,6 +6,7 @@ use App\Http\Requests\AvaliationRequest;
 use App\Models\Avaliation;
 use App\Models\Company;
 use App\Models\Product;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class AvaliationController extends Controller
@@ -15,9 +16,13 @@ class AvaliationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Product $product)
+    public function index(Product $product, Topic $topic)
     {
-        return view('avaliations.index', compact('product'));
+        $avaliations = Avaliation::where('product_id', $product->id)
+            ->where('topic_id', $topic->id)
+            ->get();
+
+        return view('avaliations.index', compact('avaliations', 'product', 'topic'));
     }
 
     /**
@@ -41,7 +46,12 @@ class AvaliationController extends Controller
      */
     public function store(AvaliationRequest $request)
     {
-        $avaliation = Avaliation::create($request->all());
+        $data = $request->all();
+        $explode = explode("-", $request->product_topic_id);
+        $data['product_id'] = trim($explode[0]);
+        $data['topic_id'] = trim($explode[1]);
+
+        $avaliation = Avaliation::create($data);
 
         if ($request->document) {
             $avaliation->addDocuments($request->document);

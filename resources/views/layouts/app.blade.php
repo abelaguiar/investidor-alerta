@@ -140,7 +140,7 @@
                                             @if($product->topics->isNotEmpty())
                                             <div class="dropdown-menu" aria-labelledby="topnav-email">
                                                 @foreach($product->topics as $topic)
-                                                    <a href="{{ route('avaliation.index', $product->id) }}" class="dropdown-item">
+                                                    <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="dropdown-item">
                                                         {{ $topic->name }}
                                                     </a>
                                                 @endforeach
