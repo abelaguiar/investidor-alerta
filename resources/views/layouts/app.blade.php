@@ -120,12 +120,36 @@
                                     </div>
                                 </li>
                             @endif
-                            <a class="nav-link arrow-none" href="{{ route('avaliations.create') }}" id="topnav-pages" role="button">
+                            <a class="nav-link" href="{{ route('avaliations.create') }}" id="topnav-pages" role="button">
                                 <i class="fa"></i> Avalie aqui
                             </a>
-                            <a class="nav-link arrow-none" href="{{ route('avaliations.index') }}" id="topnav-pages" role="button">
-                                <i class="fa"></i> Avaliações
-                            </a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="topnav-pages" role="button">
+                                    <i class="fa"></i> Avaliações
+                                    <div class="arrow-down"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                    @foreach (App\Models\Product::all() as $product)
+                                        <div class="dropdown">
+                                            <a href="{{ route('avaliation.index', $product->id) }}" class="dropdown-item dropdown-toggle arrow-none">
+                                                {{ $product->name }}
+                                                @if($product->topics->isNotEmpty())
+                                                <div class="arrow-down"></div>
+                                                @endif
+                                            </a>
+                                            @if($product->topics->isNotEmpty())
+                                            <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                @foreach($product->topics as $topic)
+                                                    <a href="{{ route('avaliation.index', $product->id) }}" class="dropdown-item">
+                                                        {{ $topic->name }}
+                                                    </a>
+                                                @endforeach
+                                            </div>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>

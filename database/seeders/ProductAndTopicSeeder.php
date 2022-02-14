@@ -21,6 +21,12 @@ class ProductAndTopicSeeder extends Seeder
             Topic::create(['name' => 'Geral']);
             Topic::create(['name' => 'Mercado Americano']);
             Topic::create(['name' => 'Analise Gráfica']);
+            Topic::create(['name' => 'Day Trade']);
+            Topic::create(['name' => 'Swing Trade']);
+            Topic::create(['name' => 'Opções']);
+            Topic::create(['name' => 'Relatorios Fundamentalistas']);
+            Topic::create(['name' => 'Buy And Hold']);
+            Topic::create(['name' => 'Mercado Americano']);
         }
 
         if (is_null(Product::first())) {
@@ -35,14 +41,10 @@ class ProductAndTopicSeeder extends Seeder
             Product::create(['name' => 'Curso de Buy And Hold']);
             Product::create(['name' => 'Curso de Contabilidade']);
             Product::create(['name' => 'Curso de Opcoes']);
-            Product::create(['name' => 'ROBO DE DAY TRADE']);
-            Product::create(['name' => 'ROBO DE SWING TRADE']);
-            Product::create(['name' => 'Assinatura de Sinais de Day Trade']);
-            Product::create(['name' => 'Assinatura de Sinais de Swing Trade']);
-            Product::create(['name' => 'Assinatura de Sinais de Opcoes']);
-            Product::create(['name' => 'Assinatura de Relatorios Fundamentalistas']);
-            Product::create(['name' => 'Assinatura de Buy And Hold']);
-            Product::create(['name' => 'Assinatura de Mercado Americano']);
+            $productFive = Product::create(['name' => 'Robo']);
+            $productFive->topics()->sync([6, 7]);
+            $productSix = Product::create(['name' => 'Assinatura']);
+            $productSix->topics()->sync([6, 7, 8, 9, 10, 11]);
             Product::create(['name' => 'Clubes de Investimento']);
             Product::create(['name' => 'Corretoras']);
             Product::create(['name' => 'Fundos de Investimento']);

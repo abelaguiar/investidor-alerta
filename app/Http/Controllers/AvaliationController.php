@@ -15,9 +15,9 @@ class AvaliationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Product $product)
     {
-        //
+        return view('avaliations.index', compact('product'));
     }
 
     /**
