@@ -40,7 +40,7 @@ class ProductAndTopicSeeder extends Seeder
             $productFour->topics()->sync([3, 4]);
             Product::create(['name' => 'Curso de Buy And Hold']);
             Product::create(['name' => 'Curso de Contabilidade']);
-            Product::create(['name' => 'Curso de Opcoes']);
+            Product::create(['name' => 'Curso de Opções']);
             $productFive = Product::create(['name' => 'Robo']);
             $productFive->topics()->sync([6, 7]);
             $productSix = Product::create(['name' => 'Assinatura']);

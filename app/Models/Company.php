@@ -18,8 +18,13 @@ class Company extends Model
      */
     protected $fillable = [
         'name',
-        'link'
+        'links'
     ];
 
     protected static $filter = 'App\Filters\CompanyFilter';
+
+    public function avaliations()
+    {
+        return $this->hasMany(Avaliation::class);
+    }
 }

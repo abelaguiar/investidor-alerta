@@ -20,7 +20,7 @@ class CreateAvaliationsTable extends Migration
             $table->string('phone');
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('topic_id');
+            $table->unsignedBigInteger('topic_id')->nullable();
             $table->string('other_product')->nullable();
             $table->date('date_acquisition');
             $table->text('description_experience_product');

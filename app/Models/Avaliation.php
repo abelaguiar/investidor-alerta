@@ -38,7 +38,7 @@ class Avaliation extends Model
 
     public function getDateAcquisitionAttribute()
     {
-        return \DateTime::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('d/m/Y');;
+        return \DateTime::createFromFormat('Y-m-d', $this->attributes['date_acquisition'])->format('d/m/Y');;
     }
 
     public function company()
@@ -61,5 +61,21 @@ class Avaliation extends Model
         $destinationFolder = 'avaliations/documents';
         $relativePath = $document->store($destinationFolder, 'public');
         $this->document = '/storage/' . $relativePath;
+    }
+
+    public function approved(): void
+    {
+        $this->authorize = true;
+        $this->save();
+    }
+
+    public function authorized()
+    {
+        return $this->where('authorize', true);
+    }
+
+    public function notAuthorized()
+    {
+        return $this->where('authorize', false);
     }
 }

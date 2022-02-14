@@ -13,6 +13,16 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function avaliations(Company $company)
+    {
+        return view('companies.avaliations', compact('company'));
+    }
+
+    /**
+     * Search company.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function search(Request $request)
     {
         $companies = Company::filter($request)->paginate(10);
@@ -65,7 +75,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('companies.edit', compact('company'));
     }
 
     /**

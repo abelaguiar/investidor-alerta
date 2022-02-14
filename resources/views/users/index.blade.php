@@ -31,11 +31,11 @@
                                         <td>{{ $user->role->name }}</td>
                                         <td>
                                             @if ($user->name != 'admin')
-                                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info text-truncate">
+                                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info btn-sm text-truncate">
                                                     <i class="fa fa-edit"></i> Editar
                                                 </a>
                                                 @if(auth()->user()->isAdmin())
-                                                    <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-xs light btn-danger"
+                                                    {{--<a href="{{ route('users.destroy', $user->id) }}" class="btn btn-sm light btn-danger"
                                                         onclick="event.preventDefault();
                                                         document.getElementById('users-destroy-form-{{ $user->id }}').submit();">
                                                         <i class="fa fa-trash"></i> Excluir
@@ -43,7 +43,7 @@
                                                     <form id="users-destroy-form-{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                    </form>
+                                                    </form>--}}
                                                 @endif
                                             @endif
                                         </td>

@@ -7,7 +7,6 @@ use App\Models\Avaliation;
 use App\Models\Company;
 use App\Models\Product;
 use App\Models\Topic;
-use Illuminate\Http\Request;
 
 class AvaliationController extends Controller
 {
@@ -16,10 +15,13 @@ class AvaliationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Product $product, Topic $topic)
+    public function index(Product $product, Topic $topic, Avaliation $avaliation)
     {
-        $avaliations = Avaliation::where('product_id', $product->id)
+        $avaliations = $avaliation
+            ->authorized()
+            ->where('product_id', $product->id)
             ->where('topic_id', $topic->id)
+            ->groupBy('company_id')
             ->get();
 
         return view('avaliations.index', compact('avaliations', 'product', 'topic'));
@@ -48,8 +50,13 @@ class AvaliationController extends Controller
     {
         $data = $request->all();
         $explode = explode("-", $request->product_topic_id);
-        $data['product_id'] = trim($explode[0]);
-        $data['topic_id'] = trim($explode[1]);
+        
+        if (count($explode) > 1) {
+            $data['product_id'] = trim($explode[0]);
+            $data['topic_id'] = trim($explode[1]);
+        } else {
+            $data['product_id'] = $explode[0];
+        }
 
         $avaliation = Avaliation::create($data);
 
@@ -57,6 +64,22 @@ class AvaliationController extends Controller
             $avaliation->addDocuments($request->document);
             $avaliation->save();
         }
+
+        flash('Salvo com sucesso!')->success();
+
+        return back();
+    }
+
+    public function approve(Avaliation $avaliation)
+    {
+        $avaliations = $avaliation->notAuthorized()->paginate(10);
+
+        return view('avaliations.approved', compact('avaliations'));
+    }
+
+    public function approved(Avaliation $avaliation)
+    {
+        $avaliation->approved();
 
         flash('Salvo com sucesso!')->success();
 

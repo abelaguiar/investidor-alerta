@@ -1,11 +1,4 @@
 <x-app-layout>
-
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Empresas') }}
-        </h2>
-    </x-slot>
-    
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -49,7 +42,7 @@
                         <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-outline-light text-truncate">
                             <i class="fa fa-edit"></i> Editar
                         </a>
-                        <a href="{{ route('companies.destroy', $company->id) }}" class="btn btn-xs light btn-danger"
+                        {{--<a href="{{ route('companies.destroy', $company->id) }}" class="btn btn-xs light btn-danger"
                             onclick="event.preventDefault();
                             document.getElementById('companies-destroy-form-{{ $company->id }}').submit();">
                             <i class="fa fa-trash"></i> Excluir
@@ -57,7 +50,7 @@
                         <form id="companies-destroy-form-{{ $company->id }}" action="{{ route('companies.destroy', $company->id) }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                        </form>
+                        </form>--}}
                     </div>
                 </div>
             </div>

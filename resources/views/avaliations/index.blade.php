@@ -1,14 +1,4 @@
 <x-app-layout>
-
-<x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Avaliações ({{ $product->name }})
-        @if (!is_null($topic->name))
-            - {{ $topic->name }}
-        @endif
-    </h2>
-</x-slot>
-
 <div class="row">
     @forelse ($avaliations as $avaliation)
         <div class="col-xl-3 col-sm-6">
@@ -28,7 +18,7 @@
                     @endif
                 </div>
                 <div class="btn-group" role="group">
-                    <a href="{{ route('avaliations.edit', $avaliation->id) }}" class="btn btn-outline-light text-truncate">
+                    <a href="{{ route('companies.avaliations', $avaliation->company->id) }}" class="btn btn-outline-light text-truncate">
                         <i class="fa fa-eye"></i> Ver Avaliações
                     </a>
                 </div>
@@ -45,5 +35,4 @@
     </div>
     @endforelse
 </div>
-
 </x-app-layout>

@@ -1,10 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Empresas') }}
-        </h2>
-    </x-slot>
-
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -25,7 +19,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Link</label>
-                                    <input name="links" class="form-control" type="text" value="{{ old('link') ?? $company->link }}">
+                                    <input name="links" class="form-control" type="text" value="{{ old('links') ?? $company->links }}">
                                 </div>
                             </div>
                         </div>

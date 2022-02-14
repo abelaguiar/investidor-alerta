@@ -111,7 +111,8 @@
                                         <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                        <a href="{{ route('user.request.authorization') }}" class="dropdown-item">Permissões Usuários</a>
+                                        {{--<a href="{{ route('user.request.authorization') }}" class="dropdown-item">Permissões Usuários</a>--}}
+                                        <a href="{{ route('avaliation.approve') }}" class="dropdown-item">Aprovar Avaliação</a> 
                                         <a href="{{ route('users.create') }}" class="dropdown-item">Cadastrar Usuário</a> 
                                         <a href="{{ route('users.index') }}" class="dropdown-item">Listar Usuários</a>
                                         <a href="{{ route('roles.index') }}" class="dropdown-item">Grupos</a>

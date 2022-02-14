@@ -33,9 +33,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('user/{user}/authorized', [UserController::class, 'authorizeUser'])->name('user.authorize');
     Route::resource('users', UserController::class);
 
+    Route::get('avaliation/approve', [AvaliationController::class, 'approve'])->name('avaliation.approve');
+    Route::get('avaliation/{avaliation}/approved', [AvaliationController::class, 'approved'])->name('avaliation.approved');
     Route::get('avaliation/{product}/{topic?}', [AvaliationController::class, 'index'])->name('avaliation.index');
     Route::resource('avaliations', AvaliationController::class)->except(['index']);
     
+    Route::get('companies/{company}/avaliations', [CompanyController::class, 'avaliations'])->name('companies.avaliations');
     Route::get('companies/search', [CompanyController::class, 'search'])->name('companies.search');
     Route::resource('companies', CompanyController::class);
 

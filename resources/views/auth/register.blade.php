@@ -1,9 +1,6 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
         </x-slot>
 
         <!-- Validation Errors -->
@@ -24,7 +21,7 @@
             <!-- Email Address -->
             <div class="mt-2">
                 <x-label for="phone" :value="__('Whatsapp')" />
-                <x-input id="phone" class="form-control" type="phone" name="phone" :value="old('phone')" required />
+                <x-input id="phone" class="form-control" type="string" name="phone" :value="old('phone')" required />
             </div>
             <!-- Password -->
             <div class="mt-2">
