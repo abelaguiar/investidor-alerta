@@ -28,7 +28,7 @@
                             <td>{{ $avaliation->phone }}</td>
                             <td>{{ $avaliation->company->name }}</td>
                             <td>
-                                @if($avaliation->topic_id)  
+                                @if(!is_null($avaliation->topic_id))  
                                 {{ $avaliation->product->name .' - '. $avaliation->topic->name }}
                                 @else
                                 {{ $avaliation->product->name }}

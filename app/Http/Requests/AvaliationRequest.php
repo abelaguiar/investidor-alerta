@@ -32,7 +32,7 @@ class AvaliationRequest extends FormRequest
             'date_acquisition' => 'required',
             'description_experience_product' => 'required',
             'avaliation_count' => 'required|integer',
-            'document' => 'required'
+            'document' => 'required|file|mimes:jpg,png,pdf'
         ];
     }
 }

@@ -51,6 +51,11 @@ class Avaliation extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function topic()
+    {
+        return $this->belongsTo(Topic::class);
+    }
+
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable');
