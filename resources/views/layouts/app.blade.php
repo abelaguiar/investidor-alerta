@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8" />
-    <title>Link Money - Integrando Profissionais em potencial</title>
+    <title>Investidor Alerta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="InvestidorAlerta" name="Investidor alerta" />
     <meta content="Limiteweb" name="Robson Di Souza" />
@@ -14,10 +14,10 @@
     <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    
+    <link href="/assets/css/style.css" id="app-style" rel="stylesheet" type="text/css" />
 
     {{ $styles ?? '' }}
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body 
@@ -59,33 +59,8 @@
                 <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
                     <i class="fa fa-fw fa-bars"></i>
                 </button>
-                <!--<form class="app-search d-none d-lg-block"  style="padding-top: 20px">
-                    <div class="position-relative">
-                        <input type="text" class="form-control" placeholder="Buscar...">
-                        <span class="uil-search"></span>
-                    </div>
-                </form>-->
             </div>
             <div class="d-flex">
-                <!--<div class="dropdown d-inline-block d-lg-none ms-2">
-                    <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                        <i class="uil-search"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
-                        <form class="p-3">
-                            <div class="m-0">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Recipient's username">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="submit">
-                                            <i class="mdi mdi-magnify"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>-->
                 <div class="dropdown d-none d-lg-inline-block ms-1">
                     <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                         <i class="uil-minus-path"></i>
@@ -133,29 +108,51 @@
                             </li>
                             @if (auth()->user()->isAdmin())
                                 <li class="nav-item dropdown"> 
-                                    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button">
-                                        <i class="uil-apps me-2"></i>Lojas
-                                        <div class="arrow-down"></div>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                        <a href="{{ route('shops.index') }}" class="dropdown-item">Listar Lojas</a> 
-                                    </div>
-                                </li>
-                                @if (auth()->user()->isAdmin())
-                                <li class="nav-item dropdown"> 
                                     <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"> 
-                                        <i class="uil-apps me-2"></i>Usuários
+                                        <i class="uil-apps me-2"></i> Administrador
                                         <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                        <a href="{{ route('user.request.authorization') }}" class="dropdown-item">Permissões Usuários</a>
+                                        {{--<a href="{{ route('user.request.authorization') }}" class="dropdown-item">Permissões Usuários</a>--}}
+                                        <a href="{{ route('avaliation.approve') }}" class="dropdown-item">Aprovar Avaliação</a> 
                                         <a href="{{ route('users.create') }}" class="dropdown-item">Cadastrar Usuário</a> 
                                         <a href="{{ route('users.index') }}" class="dropdown-item">Listar Usuários</a>
                                         <a href="{{ route('roles.index') }}" class="dropdown-item">Grupos</a>
+                                        <a href="{{ route('companies.create') }}" class="dropdown-item">Cadastrar Empresa</a>
+                                        <a href="{{ route('companies.index') }}" class="dropdown-item">Listar Empresas</a>
                                     </div>
                                 </li>
-                                @endif
                             @endif
+                            <a class="nav-link" href="{{ route('avaliations.create') }}" id="topnav-pages" role="button">
+                                <i class="fa"></i> Avalie aqui
+                            </a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="topnav-pages" role="button">
+                                    <i class="fa"></i> Avaliações
+                                    <div class="arrow-down"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                    @foreach (App\Models\Product::all() as $product)
+                                        <div class="dropdown">
+                                            <a href="{{ route('avaliation.index', $product->id) }}" class="dropdown-item dropdown-toggle arrow-none">
+                                                {{ $product->name }}
+                                                @if($product->topics->isNotEmpty())
+                                                <div class="arrow-down"></div>
+                                                @endif
+                                            </a>
+                                            @if($product->topics->isNotEmpty())
+                                            <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                @foreach($product->topics as $topic)
+                                                    <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="dropdown-item">
+                                                        {{ $topic->name }}
+                                                    </a>
+                                                @endforeach
+                                            </div>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -178,7 +175,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script>© LinkMoney.
+                        <script>document.write(new Date().getFullYear())</script>© InvestidorAlerta.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-end d-none d-sm-block">
@@ -203,8 +200,6 @@
 <script src="/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
 
 <!-- apexcharts -->
-<script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
-<script src="/assets/js/pages/dashboard.init.js"></script>
 
 <!-- App js -->
 <script src="/assets/js/app.js"></script>

@@ -210,7 +210,11 @@ return [
         'document' => 'documento',
         'telephone' => 'telefone',
         'shop_id' => 'loja',
-        'representative_id' => 'representante',
-        'picture_profile' => 'foto de perfil'
+        'VISITOR_id' => 'representante',
+        'picture_profile' => 'foto de perfil',
+        'company_id' => 'empresa',
+        'product_topic' => 'produto',
+        'date_acquisition' => 'data de aquisição',
+        'description_experience_product' => 'sua experiência com o produto ou serviço'
     ],
 ];
