@@ -48,6 +48,12 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Data da Aquisição</label>
+                                    <input name="date_acquisition" id="date_acquisition" class="form-control" type="text" value="{{ old('phone') }}">
+                                </div>
+                            </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Empresa Avaliada</label>
@@ -61,10 +67,10 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Data da Aquisição</label>
-                                    <input name="date_acquisition" id="date_acquisition" class="form-control" type="text" value="{{ old('phone') }}">
+                                    <label>Outra empresa?</label>
+                                    <input name="other_product" class="form-control" type="text" value="{{ old('other_product') }}">
                                 </div>
                             </div>
                         </div>
