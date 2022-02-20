@@ -30,14 +30,29 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="card">
+                <img src="assets/images/banner.jpg" width="100%" height="70" class="card-img-top img-fluid img-fluid. max-width: 100%;">
+            </div>
+        </div>
     </div>
 
     <div class="row">
         @foreach (App\Models\Product::all() as $product)
             <div class="col-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">{{ $product->name }}</h4>
+                    <div class="card-header" style="
+                        padding: 0.75rem 1.25rem;
+                        margin-bottom: 0;
+                        color: #74788d;
+                        background-color: rgb(230, 230, 230);
+                        border-bottom: 0 solid #f6f6f6;
+                    ">
+                        <h4 class="card-title" style="
+                            text-transform: uppercase;
+                            font-size: 18px;
+                            color: #74788d;
+                        ">{{ $product->name }}</h4>
                     </div>
                     <div class="card-body">
                         <div class="row align-items-center">
@@ -50,7 +65,7 @@
                                     <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="btn btn-primary waves-effect waves-light">
                                         Ver
                                         Avaliações
-                                        Aqui
+                                        <i class="uil uil-arrow-right ms-2"></i>
                                     </a>
                                 </div>
                                 @endforeach

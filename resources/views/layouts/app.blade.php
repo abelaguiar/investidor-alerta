@@ -23,7 +23,7 @@
 <body 
     data-layout="horizontal" 
     data-topbar="colored" 
-    style="background:url(/assets/images/background.jpg) no-repeat fixed"
+    style="background: url('assets/images/background.jpg') 0% 0% / cover no-repeat fixed;"
 >
 
 <div id="preloader">
@@ -89,11 +89,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="dropdown d-inline-block">
-                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                        <i class="uil-cog"></i>
-                    </button>
-                </div>
             </div>
         </div>
         <div class="container-fluid">
@@ -124,11 +119,11 @@
                                 </li>
                             @endif
                             <a class="nav-link" href="{{ route('avaliations.create') }}" id="topnav-pages" role="button">
-                                <i class="fa"></i> Avalie aqui
+                                <i class="uil-comment-alt-edit"></i> Avalie aqui
                             </a>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="topnav-pages" role="button">
-                                    <i class="fa"></i> Avaliações
+                                    <i class="uil-chart"></i> Avaliações
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-pages">
