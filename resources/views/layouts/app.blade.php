@@ -101,53 +101,55 @@
                                     <i class="uil-home-alt me-2"></i> Dashboard 
                                 </a>
                             </li>
-                            @if (auth()->user()->isAdmin())
-                                <li class="nav-item dropdown"> 
-                                    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"> 
-                                        <i class="uil-apps me-2"></i> Administrador
+                            @if (auth()->user()->authorized)
+                                @if (auth()->user()->isAdmin())
+                                    <li class="nav-item dropdown"> 
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"> 
+                                            <i class="uil-apps me-2"></i> Administrador
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                                            <a href="{{ route('user.request.authorization') }}" class="dropdown-item">Aprovar Usuários</a>
+                                            <a href="{{ route('avaliation.approve') }}" class="dropdown-item">Aprovar Avaliação</a> 
+                                            <a href="{{ route('users.create') }}" class="dropdown-item">Cadastrar Usuário</a> 
+                                            <a href="{{ route('users.index') }}" class="dropdown-item">Listar Usuários</a>
+                                            <a href="{{ route('roles.index') }}" class="dropdown-item">Grupos</a>
+                                            <a href="{{ route('companies.create') }}" class="dropdown-item">Cadastrar Empresa</a>
+                                            <a href="{{ route('companies.index') }}" class="dropdown-item">Listar Empresas</a>
+                                        </div>
+                                    </li>
+                                @endif
+                                <a class="nav-link" href="{{ route('avaliations.create') }}" id="topnav-pages" role="button">
+                                    <i class="uil-comment-alt-edit"></i> Avalie aqui
+                                </a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="topnav-pages" role="button">
+                                        <i class="uil-chart"></i> Avaliações
                                         <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                        {{--<a href="{{ route('user.request.authorization') }}" class="dropdown-item">Permissões Usuários</a>--}}
-                                        <a href="{{ route('avaliation.approve') }}" class="dropdown-item">Aprovar Avaliação</a> 
-                                        <a href="{{ route('users.create') }}" class="dropdown-item">Cadastrar Usuário</a> 
-                                        <a href="{{ route('users.index') }}" class="dropdown-item">Listar Usuários</a>
-                                        <a href="{{ route('roles.index') }}" class="dropdown-item">Grupos</a>
-                                        <a href="{{ route('companies.create') }}" class="dropdown-item">Cadastrar Empresa</a>
-                                        <a href="{{ route('companies.index') }}" class="dropdown-item">Listar Empresas</a>
+                                        @foreach (App\Models\Product::all() as $product)
+                                            <div class="dropdown">
+                                                <a href="{{ route('avaliation.index', $product->id) }}" class="dropdown-item dropdown-toggle arrow-none">
+                                                    {{ $product->name }}
+                                                    @if($product->topics->isNotEmpty())
+                                                    <div class="arrow-down"></div>
+                                                    @endif
+                                                </a>
+                                                @if($product->topics->isNotEmpty())
+                                                <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                                    @foreach($product->topics as $topic)
+                                                        <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="dropdown-item">
+                                                            {{ $topic->name }}
+                                                        </a>
+                                                    @endforeach
+                                                </div>
+                                                @endif
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </li>
                             @endif
-                            <a class="nav-link" href="{{ route('avaliations.create') }}" id="topnav-pages" role="button">
-                                <i class="uil-comment-alt-edit"></i> Avalie aqui
-                            </a>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="topnav-pages" role="button">
-                                    <i class="uil-chart"></i> Avaliações
-                                    <div class="arrow-down"></div>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="topnav-pages">
-                                    @foreach (App\Models\Product::all() as $product)
-                                        <div class="dropdown">
-                                            <a href="{{ route('avaliation.index', $product->id) }}" class="dropdown-item dropdown-toggle arrow-none">
-                                                {{ $product->name }}
-                                                @if($product->topics->isNotEmpty())
-                                                <div class="arrow-down"></div>
-                                                @endif
-                                            </a>
-                                            @if($product->topics->isNotEmpty())
-                                            <div class="dropdown-menu" aria-labelledby="topnav-email">
-                                                @foreach($product->topics as $topic)
-                                                    <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="dropdown-item">
-                                                        {{ $topic->name }}
-                                                    </a>
-                                                @endforeach
-                                            </div>
-                                            @endif
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </nav>

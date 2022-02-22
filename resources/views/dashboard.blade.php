@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
 
+    @if (auth()->user()->authorized)
+
     <div class="row">
         <div class="col-md-6 col-xl-3">
             <div class="card">
@@ -50,7 +52,7 @@
                     ">
                         <h4 class="card-title" style="
                             text-transform: uppercase;
-                            font-size: 18px;
+                            font-size: 15px;
                             color: #74788d;
                         ">{{ $product->name }}</h4>
                     </div>
@@ -58,23 +60,21 @@
                         <div class="row align-items-center">
                             @if($product->topics->isNotEmpty())
                                 @foreach($product->topics as $topic)
-                                <div class="col-sm-8">
+                                <div class="col-sm-6">
                                     {{ $topic->name }}
                                 </div>
-                                <div class="col-sm-4 mt-2">
-                                    <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="btn btn-primary waves-effect waves-light">
-                                        Ver
-                                        Avaliações
+                                <div class="col-sm-6 mt-2" align="right">
+                                    <a href="{{ route('avaliation.index', [$product->id, $topic->id]) }}" class="btn btn-sm btn-primary waves-effect waves-light">
+                                        Ver Avaliações
                                         <i class="uil uil-arrow-right ms-2"></i>
                                     </a>
                                 </div>
                                 @endforeach
                             @else
-                                <div class="col-sm-4 mt-2">
-                                    <a href="{{ route('avaliation.index', $product->id) }}" class="btn btn-primary waves-effect waves-light">
-                                        Ver
-                                        Avaliações
-                                        Aqui
+                                <div class="col-sm-12 mt-2" align="right">
+                                    <a href="{{ route('avaliation.index', $product->id) }}" class="btn btn-sm btn-primary waves-effect waves-light">
+                                        Ver Avaliações
+                                        <i class="uil uil-arrow-right ms-2"></i>
                                     </a>
                                 </div>
                             @endif
@@ -84,5 +84,16 @@
             </div>
         @endforeach
     </div>
+
+    @else
+    <div class="col-xl-12 col-sm-12">
+        <div class="card text-center">
+            <br>
+            Aguarde aprovação para avaliar produtos.
+            <br>
+            <br>
+        </div>
+    </div>
+    @endif
     
 </x-app-layout>

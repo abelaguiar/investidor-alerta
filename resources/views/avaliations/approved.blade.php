@@ -1,64 +1,32 @@
 <x-app-layout>
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">Avaliações para Aprovar</div>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-borderless mb-0">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Whatsapp</th>
-                            <th>Empresa</th>
-                            <th>Produto</th>
-                            <th>Aquisição</th>
-                            <th>Descrição</th>
-                            <th>Avaliação</th>
-                            <th>Documento</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($avaliations as $key => $avaliation)
-                        <tr>
-                            <td>{{ $avaliation->name }}</td>
-                            <td>{{ $avaliation->email }}</td>
-                            <td>{{ $avaliation->phone }}</td>
-                            <td>{{ $avaliation->company->name }}</td>
-                            <td>
-                                @if(!is_null($avaliation->topic_id))  
-                                {{ $avaliation->product->name .' - '. $avaliation->topic->name }}
-                                @else
-                                {{ $avaliation->product->name }}
-                                @endif
-                            </td>
-                            <td>{{ $avaliation->date_acquisition }}</td>
-                            <td title="{{ $avaliation->description_experience_product }}">
-                                {{ Str::limit($avaliation->description_experience_product, 10) }}
-                            </td>
-                            <td>{{ $avaliation->avaliation_count }}</td>
-                            <td>
-                                <a href="{{ $avaliation->document }}">
-                                    Download
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ route('avaliation.approved', $avaliation->id) }}" class="btn btn-sm btn-success">
-                                    Aprovar
-                                </a>
-                            </td>
-                        </tr>
-                        @empty
-                            
-                        @endforelse
-                    </tbody>
-                </table>
-
-                {{ $avaliations->render() }}
+    
+    <div class="row">
+        @forelse ($avaliations as $key => $avaliation)
+		<div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mt-0">{{ $avaliation->name }}</h4>
+                    <p class="card-text">{{ $avaliation->description_experience_product }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="text-primary">{{ $avaliation->company->name }}</span></li>
+                    <li class="list-group-item">
+                        <label>Avaliações do Usuário</label>
+                        <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
+                            @for ($i = 1; $i <= 10; $i++)
+                                <option value="{{ $i }}" {{ $avaliation->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
+                            @endfor
+                        </select>  
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="{{ route('avaliation.approved', $avaliation->id) }}" class="btn btn-success waves-effect waves-light">
+                        <i class="uil uil-check me-2"></i> Permitir
+                    </a>
+                </div>
             </div>
         </div>
+        @endforeach
     </div>
 
     <x-slot name="styles">

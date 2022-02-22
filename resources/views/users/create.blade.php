@@ -14,7 +14,7 @@
                                     <input name="name" class="form-control" type="text" value="{{ old('name') }}">
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input name="email" class="form-control" type="email" value="{{ old('email') }}">

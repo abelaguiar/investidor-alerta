@@ -123,7 +123,9 @@ class UserController extends Controller
 
     public function requestAuthorization()
     {
-        $users = User::where('authorized', false)->paginate(10);
+        $users = User::where('role_id', Role::VISITOR)
+            ->where('authorized', false)
+            ->paginate(10);
 
         return view('users.request-authorization', compact('users'));
     }
