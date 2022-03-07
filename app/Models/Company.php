@@ -27,4 +27,18 @@ class Company extends Model
     {
         return $this->hasMany(Avaliation::class);
     }
+
+    public function mediumAvaliation()
+    {
+        $mediumAvaliation = 0;
+
+        $count = $this->avaliations()->count();
+        $sum = $this->avaliations->sum('avaliation_count');
+
+        if ($count) {
+            $mediumAvaliation = $sum / $count;
+        }
+
+        return $mediumAvaliation;
+    }
 }

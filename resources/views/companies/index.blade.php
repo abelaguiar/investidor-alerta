@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -27,30 +28,45 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
-        @foreach ($companies as $company)
+        @foreach ($companies as $key => $company)
             <div class="col-xl-3 col-sm-6">
                 <div class="card text-center">
-                    <h4 class="card-title" style="margin-top:30px ">
-                        {{ $company->name }} <br>
-                    </h4>
-                    <h4 class="card-title" style="margin-top:30px ">
-                        {{ $company->link }} <br>
-                    </h4>
-                    <div class="btn-group" role="group">
-                        <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-outline-light text-truncate">
-                            <i class="fa fa-edit"></i> Editar
-                        </a>
-                        {{--<a href="{{ route('companies.destroy', $company->id) }}" class="btn btn-xs light btn-danger"
-                            onclick="event.preventDefault();
-                            document.getElementById('companies-destroy-form-{{ $company->id }}').submit();">
-                            <i class="fa fa-trash"></i> Excluir
-                        </a>
-                        <form id="companies-destroy-form-{{ $company->id }}" action="{{ route('companies.destroy', $company->id) }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                        </form>--}}
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            {{ $company->name }} <br>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        @if ($company->mediumAvaliation() > 0)
+                            <div class="mt-3 row">
+                                <h5 style="font-size: 12px">Média Avaliações</h5>
+                                <div class="col-md-12">
+                                    <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
+                                        @for ($i = 1; $i <= 10; $i++)
+                                            <option value="{{ $i }}" {{ $company->mediumAvaliation() == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                        @endfor
+                                    </select>  
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group" role="group">
+                            <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-outline-light text-truncate">
+                                <i class="fa fa-edit"></i> Editar
+                            </a>
+                            {{--<a href="{{ route('companies.destroy', $company->id) }}" class="btn btn-xs light btn-danger"
+                                onclick="event.preventDefault();
+                                document.getElementById('companies-destroy-form-{{ $company->id }}').submit();">
+                                <i class="fa fa-trash"></i> Excluir
+                            </a>
+                            <form id="companies-destroy-form-{{ $company->id }}" action="{{ route('companies.destroy', $company->id) }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                            </form>--}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,5 +74,23 @@
     </div>
     
     {{ $companies->render() }}
+
+    <x-slot name="styles">
+        <link rel="stylesheet" href="/assets/css/select2.min.css">
+        <link href="/assets/libs/jquery-bar-rating/themes/bars-1to10.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/libs/jquery-bar-rating/themes/css-stars.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/libs/jquery-bar-rating/themes/fontawesome-stars-o.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/libs/jquery-bar-rating/themes/fontawesome-stars.css" rel="stylesheet" type="text/css" />
+    </x-slot>
+
+    <x-slot name="scripts">
+        <script type="text/javascript" src="/assets/libs/jquery-bar-rating/jquery.barrating.min.js"></script>
+        <script type="text/javascript" src="/assets/js/pages/rating-init.js"></script>
+        <script>
+            @foreach ($companies as $key => $company)
+            $("#rating-1to10{{$key}}").barrating("show",{theme:"bars-1to10", hoverState:false, fastClicks:false})
+            @endforeach
+        </script>
+    </x-slot>
     
-    </x-app-layout>
+</x-app-layout>

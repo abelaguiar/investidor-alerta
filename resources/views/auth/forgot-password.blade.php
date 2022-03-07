@@ -1,9 +1,6 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -26,7 +23,7 @@
                 <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-end mt-3">
                 <x-button class="btn btn-primary w-sm waves-effect waves-light">
                     <i class="fa fa-link"></i> <b>ENVIAR LINK DE RECUPERAÇÃO</b>
                 </x-button>

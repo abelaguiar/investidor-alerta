@@ -11,11 +11,14 @@
                 <div class="card-body">
                     <h4>{{ $avaliation->name }}</h4>
                     <br>
-                    Empresa: {{ $company->name }} <br>
+                    Empresa: <span class="text-primary">{{ $company->name }}</span> <br>
                     @if($company->links)
-                    Link: <a href="{{ $company->links }}">{{ $company->links }}</a> <br>
+                    Link: <a href="{{ $company->links }}" class="text-primary">{{ $company->links }}</a> <br>
                     @endif
-                    Produto Oferecido: {{ $avaliation->product->name }}
+                    Produto Oferecido: 
+                    <span class="text-primary">
+                        {{ $avaliation->product->name }}
+                    </span>
                     <br>
                     <br>
                     <p class="text-muted mb-4">{{ $avaliation->description_experience_product }}</p>
