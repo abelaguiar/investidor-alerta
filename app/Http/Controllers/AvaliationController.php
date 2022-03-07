@@ -21,6 +21,7 @@ class AvaliationController extends Controller
             ->authorized()
             ->where('product_id', $product->id)
             ->where('topic_id', $topic->id)
+            ->orderBy('avaliation_count', 'desc')
             ->groupBy('company_id')
             ->get();
 
