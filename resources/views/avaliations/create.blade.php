@@ -68,10 +68,9 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Outra empresa?</label>
-                                    <input name="other_product" class="form-control" type="text" value="{{ old('other_product') }}">
-                                </div>
+                                <a type="button" class="btn btn-primary waves-effect waves-light" style="margin-top: 29px;" data-bs-toggle="modal" data-bs-target="#addCompany">
+                                    <i class="fa fa-plus"></i> Outra empresa?
+                                </a>
                             </div>
                         </div>
                         <div class="mt-3">
@@ -113,6 +112,48 @@
         </div> 
     </div>
 
+    <div class="modal fade" id="addCompany" data-bs-backdrop="static" tabindex="-1" aria-labelledby="addCommentsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Adicionar Empresa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ route('companies.store') }}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nome *</label>
+                                    <input name="name" class="form-control" type="text" value="{{ old('name') }}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>CNPJ *</label>
+                                    <input name="cnpj" id="cnpj" class="form-control" type="text" value="{{ old('cnpj') }}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Link</label>
+                                    <input name="links" class="form-control" type="text" value="{{ old('link') }}">
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-plus"></i> Adicionar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <x-slot name="styles">
         <link rel="stylesheet" href="/assets/css/select2.min.css">
         <link href="/assets/libs/jquery-bar-rating/themes/bars-1to10.css" rel="stylesheet" type="text/css" />
@@ -137,6 +178,7 @@
                 $('#phone').mask('(99) 99999-9999');
                 $('#date_acquisition').mask('99/99/9999');
                 $('.select2').select2();
+                $('#cnpj').mask('99.999.999/9999-99');
             });
         </script>
     </x-slot>

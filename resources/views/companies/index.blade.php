@@ -39,6 +39,7 @@
                         </h4>
                     </div>
                     <div class="card-body">
+                        {{ $company->cnpj }}
                         @if ($company->mediumAvaliation() > 0)
                             <div class="mt-3 row">
                                 <h5 style="font-size: 12px">Média Avaliações</h5>

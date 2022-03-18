@@ -215,6 +215,7 @@ return [
         'company_id' => 'empresa',
         'product_topic' => 'produto',
         'date_acquisition' => 'data de aquisição',
-        'description_experience_product' => 'sua experiência com o produto ou serviço'
+        'description_experience_product' => 'sua experiência com o produto ou serviço',
+        'product_topic_id' => 'produto'
     ],
 ];

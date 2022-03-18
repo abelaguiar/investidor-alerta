@@ -33,7 +33,7 @@ class InitAppSeeder extends Seeder
         }
 
         if (is_null(Company::first())) {
-            Company::create(['name' => 'Empresa teste']);
+            Company::create(['name' => 'Empresa teste', 'cnpj' => '30.313.477/0001-98']);
         }
     }
 }

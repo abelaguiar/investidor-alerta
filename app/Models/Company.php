@@ -18,7 +18,8 @@ class Company extends Model
      */
     protected $fillable = [
         'name',
-        'links'
+        'links',
+        'cnpj'
     ];
 
     protected static $filter = 'App\Filters\CompanyFilter';
