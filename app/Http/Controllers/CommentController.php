@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Avaliation;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,13 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Avaliation $avaliation, Request $request)
     {
-        //
+        $avaliation->comments()->create($request->all());
+
+        flash("Comentário adicionado com sucesso!")->success();
+
+        return back();
     }
 
     /**

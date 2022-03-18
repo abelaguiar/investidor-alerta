@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AvaliationController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoleController;
@@ -35,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('avaliation/approve', [AvaliationController::class, 'approve'])->name('avaliation.approve');
     Route::get('avaliation/{avaliation}/approved', [AvaliationController::class, 'approved'])->name('avaliation.approved');
+    Route::post('avaliation/{avaliation}/comments', [CommentController::class, 'store'])->name('avaliation.comments');
     Route::get('avaliation/{product}/{topic?}', [AvaliationController::class, 'index'])->name('avaliation.index');
     Route::resource('avaliations', AvaliationController::class)->except(['index']);
     

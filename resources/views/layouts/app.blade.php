@@ -67,6 +67,14 @@
                     </button>
                 </div>
                 <div class="dropdown d-inline-block">
+                    @if (App\Models\Avaliation::where('authorize', false)->count() > 0)
+                    <a href="{{ route('avaliation.approve') }}" class="btn btn-primary">
+                        Notifications
+                        <span class="badge bg-secondary">
+                            {{ App\Models\Avaliation::where('authorize', false)->count() }}
+                        </span>
+                    </a>
+                    @endif
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle header-profile-user" src="{{ auth()->user()->picture_profile }}" alt="Header Avatar">
                         <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">
