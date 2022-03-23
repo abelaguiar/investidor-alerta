@@ -6,10 +6,10 @@
             </h4>
         </div>
         <div class="card-body">
-            @forelse ($company->avaliations as $key => $avaliation)
+            @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
             <div class="card">
                 <div class="card-body">
-                    <h4>{{ $avaliation->name }}</h4>
+                    <h4>{{ $avaliation['content']->name }}</h4>
                     <br>
                     Empresa: <span class="text-primary">{{ $company->name }}</span> <br>
                     @if($company->links)
@@ -17,17 +17,17 @@
                     @endif
                     Produto Oferecido: 
                     <span class="text-primary">
-                        {{ $avaliation->product->name }}
+                        {{ $avaliation['content']->product->name }}
                     </span>
                     <br>
                     <br>
-                    <p class="text-muted mb-4">{{ $avaliation->description_experience_product }}</p>
+                    <p class="text-muted mb-4">{{ $avaliation['content']->description_experience_product }}</p>
                     <div class="mt-3 row">
                         <label>Avaliações do Usuário</label>
                         <div class="col-md-3">
                             <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
                                 @for ($i = 1; $i <= 10; $i++)
-                                    <option value="{{ $i }}" {{ $avaliation->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                    <option value="{{ $i }}" {{ $avaliation['content']->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
                             </select>  
                         </div>

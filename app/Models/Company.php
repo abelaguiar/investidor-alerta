@@ -53,4 +53,15 @@ class Company extends Model
                 ];
             })->sortDesc();
     }
+
+    public function avaliationsWithOrderCount()
+    {
+        return $this->avaliations->map(
+            function ($avaliation, $key) {
+                return [
+                    'avaliation' => $avaliation->avaliation_count,
+                    'content' => $avaliation
+                ];
+            })->sortDesc();
+    }
 }
