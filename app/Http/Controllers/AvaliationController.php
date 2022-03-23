@@ -73,7 +73,9 @@ class AvaliationController extends Controller
 
     public function approve(Avaliation $avaliation)
     {
-        $avaliations = $avaliation->notAuthorized()->paginate(10);
+        $avaliations = $avaliation->notAuthorized()
+            ->orderBy('avaliation_count', 'desc')
+            ->paginate(10);
 
         return view('avaliations.approved', compact('avaliations'));
     }

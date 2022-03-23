@@ -30,15 +30,6 @@
     </div>
 
     <div class="row">
-        @php
-            $companies = $companies->map(function ($company, $key)
-            {
-                return [
-                    'medium' => $company->mediumAvaliation(),
-                    'content' => $company
-                ];
-            })->sortDesc(); 
-        @endphp
         @foreach ($companies as $key => $company)
             <div class="col-xl-3 col-sm-6">
                 <div class="card text-center">

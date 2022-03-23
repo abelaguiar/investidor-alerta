@@ -37,7 +37,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::with(['avaliations'])->get();
+        $companies = Company::listWithOrderMedium();
 
         return view('companies.index', compact('companies'));
     }

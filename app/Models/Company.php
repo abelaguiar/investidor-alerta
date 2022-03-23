@@ -42,4 +42,15 @@ class Company extends Model
 
         return $mediumAvaliation;
     }
+
+    public function scopeListWithOrderMedium()
+    {
+        return $this->with(['avaliations'])
+            ->get()->map(function ($company, $key) {
+                return [
+                    'medium' => $company->mediumAvaliation(),
+                    'content' => $company
+                ];
+            })->sortDesc();
+    }
 }
