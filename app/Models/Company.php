@@ -40,7 +40,7 @@ class Company extends Model
             $mediumAvaliation = $sum / $count;
         }
 
-        return $mediumAvaliation;
+        return round($mediumAvaliation, 0);
     }
 
     public function scopeListWithOrderMedium()
