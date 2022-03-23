@@ -23,4 +23,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Topic::class, 'product_topic');
     }
+
+    public function nameWithTopic()
+    {
+        return $this->name . ' - ' . $this->topics->first()->name;
+    }
 }

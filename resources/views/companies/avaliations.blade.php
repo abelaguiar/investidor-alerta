@@ -9,7 +9,9 @@
             @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
             <div class="card">
                 <div class="card-body">
-                    <h4>{{ $avaliation['content']->name }}</h4>
+                    <h4>
+                        <p>{{ $avaliation['content']->name }}</p>
+                    </h4>
                     <br>
                     Empresa: <span class="text-primary">{{ $company->name }}</span> <br>
                     @if($company->links)
@@ -32,7 +34,20 @@
                             </select>  
                         </div>
                     </div>
-                     <br>
+                    @if (auth()->user()->isAdmin())
+                        <a type="button" class="btn btn-primary waves-effect waves-light" style="margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#addComments{{$key}}">
+                            <i class="fa fa-plus"></i> Adicionar Comentário
+                        </a>
+                        <br>
+                        <br>
+                        @if ($avaliation['content']->comments->isNotEmpty())
+                            <b>Comentários: </b>
+                            <br>
+                            @foreach ($avaliation['content']->comments as $comment)
+                                <p>{{ $comment->description }}</p>
+                            @endforeach
+                        @endif
+                    @endif
                 </div>
             </div>
             @empty
@@ -47,6 +62,33 @@
             @endforelse
         </div>
     </div>
+
+    @if (auth()->user()->isAdmin())
+        @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
+        <div class="modal fade" id="addComments{{$key}}" data-bs-backdrop="static" tabindex="-1" aria-labelledby="addCommentsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Comentário</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{{ route('avaliation.comments', $avaliation['content']->id) }}" method="post">
+                        @csrf
+                        <div class="modal-body">
+                            <textarea name="description" class="form-control" id="" cols="30" rows="5"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    @endif
 
     <x-slot name="styles">
         <link rel="stylesheet" href="/assets/css/select2.min.css">

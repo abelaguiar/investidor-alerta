@@ -88,4 +88,13 @@ class AvaliationController extends Controller
 
         return back();
     }
+
+    public function destroy(Avaliation $avaliation)
+    {
+        $avaliation->delete();
+
+        flash('Removido com sucesso!')->success();
+
+        return back();
+    }
 }

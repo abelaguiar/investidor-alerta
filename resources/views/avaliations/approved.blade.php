@@ -5,7 +5,10 @@
             <div class="col-xl-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mt-0">{{ $avaliation->name }}</h4>
+                        <h4 class="card-title mt-0">
+                            <p>{{ $avaliation->product->nameWithTopic() }}</p>
+                            <p>{{ $avaliation->name }}</p>
+                        </h4>
                         <p class="card-text">{{ $avaliation->description_experience_product }}</p>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -21,11 +24,21 @@
                     </ul>
                     <div class="card-body">
                         <a href="{{ route('avaliation.approved', $avaliation->id) }}" class="btn btn-success waves-effect waves-light">
-                            <i class="uil uil-check me-2"></i> Permitir
+                            <i class="uil uil-check"></i> Permitir
+                        </a>
+                        <a class="btn btn-danger waves-effect waves-light" 
+                            onclick="event.preventDefault();
+                            document.getElementById('avaliations-destroy-form-{{ $avaliation->id }}').submit();
+                        ">
+                            <i class="uil uil-trash"></i> Remover
                         </a>
                         <a type="button" class="btn btn-primary waves-effect waves-light" style="margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#addComments{{$key}}">
                             <i class="fa fa-plus"></i> Adicionar Comentário
                         </a>
+                        <form id="avaliations-destroy-form-{{ $avaliation->id }}" action="{{ route('avaliations.destroy', $avaliation->id) }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                        </form>
                     </div>
                 </div>
             </div>
