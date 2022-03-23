@@ -67,7 +67,7 @@
                     </button>
                 </div>
                 <div class="dropdown d-inline-block">
-                    @if (App\Models\Avaliation::where('authorize', false)->count() > 0)
+                    @if (App\Models\Avaliation::where('authorize', false)->count() > 0 && auth()->user()->isAdmin())
                     <a href="{{ route('avaliation.approve') }}" class="btn btn-primary">
                         Notifications
                         <span class="badge bg-secondary">

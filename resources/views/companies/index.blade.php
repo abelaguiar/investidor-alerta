@@ -30,23 +30,32 @@
     </div>
 
     <div class="row">
+        @php
+            $companies = $companies->map(function ($company, $key)
+            {
+                return [
+                    'medium' => $company->mediumAvaliation(),
+                    'content' => $company
+                ];
+            })->sortDesc(); 
+        @endphp
         @foreach ($companies as $key => $company)
             <div class="col-xl-3 col-sm-6">
                 <div class="card text-center">
                     <div class="card-header">
                         <h4 class="card-title">
-                            {{ $company->name }} <br>
+                            {{ $company['content']->name }} <br>
                         </h4>
                     </div>
                     <div class="card-body">
-                        {{ $company->cnpj }}
-                        @if ($company->mediumAvaliation() > 0)
+                        {{ $company['content']->cnpj }}
+                        @if ($company['medium'] > 0)
                             <div class="mt-3 row">
                                 <h5 style="font-size: 12px">Média Avaliações</h5>
                                 <div class="col-md-12">
                                     <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
                                         @for ($i = 1; $i <= 10; $i++)
-                                            <option value="{{ $i }}" {{ $company->mediumAvaliation() == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                            <option value="{{ $i }}" {{ $company['medium'] == $i ? 'selected' : '' }}>{{ $i }}</option>
                                         @endfor
                                     </select>  
                                 </div>
@@ -55,7 +64,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="btn-group" role="group">
-                            <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-outline-light text-truncate">
+                            <a href="{{ route('companies.edit', $company['content']->id) }}" class="btn btn-outline-light text-truncate">
                                 <i class="fa fa-edit"></i> Editar
                             </a>
                             {{--<a href="{{ route('companies.destroy', $company->id) }}" class="btn btn-xs light btn-danger"
@@ -73,8 +82,6 @@
             </div>
         @endforeach
     </div>
-    
-    {{ $companies->render() }}
 
     <x-slot name="styles">
         <link rel="stylesheet" href="/assets/css/select2.min.css">
