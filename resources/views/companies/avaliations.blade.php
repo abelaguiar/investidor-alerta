@@ -39,14 +39,14 @@
                             <i class="fa fa-plus"></i> Adicionar Comentário
                         </a>
                         <br>
+                    @endif
+                    <br>
+                    @if ($avaliation['content']->comments->isNotEmpty())
+                        <b>Comentários: </b>
                         <br>
-                        @if ($avaliation['content']->comments->isNotEmpty())
-                            <b>Comentários: </b>
-                            <br>
-                            @foreach ($avaliation['content']->comments as $comment)
-                                <p>{{ $comment->description }}</p>
-                            @endforeach
-                        @endif
+                        @foreach ($avaliation['content']->comments as $comment)
+                            <p>{{ $comment->description }}</p>
+                        @endforeach
                     @endif
                 </div>
             </div>
@@ -103,7 +103,7 @@
         <script type="text/javascript" src="/assets/js/pages/rating-init.js"></script>
         <script>
             @foreach ($company->avaliations as $key => $avaliation)
-            $("#rating-1to10{{$key}}").barrating("show",{theme:"bars-1to10", hoverState:false, fastClicks:false})
+            $("#rating-1to10{{$key}}").barrating("show",{theme:"bars-1to10", hoverState:false, fastClicks:false, readonly: true,})
             @endforeach
         </script>
     </x-slot>

@@ -87,7 +87,7 @@
         <script type="text/javascript" src="/assets/js/pages/rating-init.js"></script>
         <script>
             @foreach ($companies as $key => $company)
-            $("#rating-1to10{{$key}}").barrating("show",{theme:"bars-1to10", hoverState:false, fastClicks:false})
+            $("#rating-1to10{{$key}}").barrating("show",{theme:"bars-1to10", hoverState:false, fastClicks:false, readonly: true})
             @endforeach
         </script>
     </x-slot>
