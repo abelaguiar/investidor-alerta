@@ -11,13 +11,13 @@
 
     <div class="row">
         <div class="col-xl-8 col-sm-8">
-            @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
+            @forelse ($company->avaliationsOrderByCount() as $key => $avaliation)
                 <div class="card">
                     <div class="card-body">
                         <h4>
-                            {{ $avaliation['content']->name }}
+                            {{ $avaliation->name }}
                             <span class="float-sm-end text-muted font-size-13">
-                                {{ $avaliation['content']->created_at->formatLocalized('%A %d %B %Y') }}
+                                {{ $avaliation->created_at->formatLocalized('%A %d %B %Y') }}
                             </span>
                         </h4>
                         <br>
@@ -27,17 +27,17 @@
                         @endif
                         Produto Oferecido: 
                         <span class="text-primary">
-                            {{ $avaliation['content']->product->name }}
+                            {{ $avaliation->product->nameWithTopic() }}
                         </span>
                         <br>
                         <br>
-                        <p class="text-muted mb-4">{{ $avaliation['content']->description_experience_product }}</p>
+                        <p class="text-muted mb-4">{{ $avaliation->description_experience_product }}</p>
                         <div class="mt-3 row">
                             <label>Avaliações do Usuário</label>
                             <div class="col-md-3">
                                 <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
                                     @for ($i = 1; $i <= 10; $i++)
-                                        <option value="{{ $i }}" {{ $avaliation['content']->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                        <option value="{{ $i }}" {{ $avaliation->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
                                     @endfor
                                 </select>  
                             </div>
@@ -49,10 +49,10 @@
                             <br>
                         @endif
                         <br>
-                        @if ($avaliation['content']->comments->isNotEmpty())
+                        @if ($avaliation->comments->isNotEmpty())
                             <b>Comentários: </b>
                             <br>
-                            @foreach ($avaliation['content']->comments as $comment)
+                            @foreach ($avaliation->comments as $comment)
                                 <p>{{ $comment->description }}</p>
                             @endforeach
                         @endif
@@ -86,8 +86,12 @@
         </div>
     </div>
 
+    <div class="m-3">
+        {{ $company->avaliationsOrderByCount()->render() }}
+    </div>
+
     @if (auth()->user()->isAdmin())
-        @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
+        @forelse ($company->avaliationsOrderByCount() as $key => $avaliation)
         <div class="modal fade" id="addComments{{$key}}" data-bs-backdrop="static" tabindex="-1" aria-labelledby="addCommentsLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -95,7 +99,7 @@
                         <h5 class="modal-title">Adicionar Comentário</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('avaliation.comments', $avaliation['content']->id) }}" method="post">
+                    <form action="{{ route('avaliation.comments', $avaliation->id) }}" method="post">
                         @csrf
                         <div class="modal-body">
                             <textarea name="description" class="form-control" id="" cols="30" rows="5"></textarea>

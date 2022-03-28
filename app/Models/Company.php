@@ -55,24 +55,16 @@ class Company extends Model
 
     public function scopeListWithOrderMedium()
     {
-        return $this->with(['avaliations'])
-            ->get()->map(function ($company, $key) {
-                return [
-                    'medium' => $company->mediumAvaliation(),
-                    'content' => $company
-                ];
-            })->sortDesc();
+        return $this->withAvg('avaliations', 'avaliation_count')
+            ->orderBy('avaliations_avg_avaliation_count', 'desc')
+            ->paginate(10);
     }
 
-    public function avaliationsWithOrderCount()
+    public function avaliationsOrderByCount()
     {
-        return $this->avaliations->map(
-            function ($avaliation, $key) {
-                return [
-                    'avaliation' => $avaliation->avaliation_count,
-                    'content' => $avaliation
-                ];
-            })->sortDesc();
+        return $this->avaliations()
+            ->orderBy('avaliation_count', 'desc')
+            ->paginate(10);
     }
 
     public function positiveAvaliationCount()

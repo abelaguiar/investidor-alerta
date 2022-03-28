@@ -24,4 +24,6 @@ class DashboardController extends Controller
             'avaliationsTopFive'
         ));    
     }
+
+    
 }

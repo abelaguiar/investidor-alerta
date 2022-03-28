@@ -49,10 +49,12 @@
                 </div>
                 <div class="card-body">
                     @foreach ($positiveTopFive as $company)
-                        <div class="alert alert-border alert-border-success alert-dismissible">
-                            <i class="uil-grin " style="font-size: 23px; color: #34c38f"></i><br>
-                            <b> {{ $company->name }} </b>
-                        </div>
+                        <a href="{{ route('companies.avaliations', $company->id) }}" class="link-secondary">
+                            <div class="alert alert-border alert-border-success alert-dismissible">
+                                <i class="uil-grin " style="font-size: 23px; color: #34c38f"></i><br>
+                                <b> {{ $company->name }} </b>
+                            </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -90,10 +92,12 @@
                 <div class="card-body">
                     <div class="card">
                         @foreach ($negativeTopFive as $company)
-                        <div class="alert alert-border alert-border-danger alert-dismissible">
-                            <i class="uil-frown" style="font-size: 23px; color: #f46a6a"></i><br>
-                            <b> {{ $company->name }} </b>
-                        </div>
+                            <a href="{{ route('companies.avaliations', $company->id) }}" class="link-secondary">
+                                <div class="alert alert-border alert-border-danger alert-dismissible">
+                                    <i class="uil-frown" style="font-size: 23px; color: #f46a6a"></i><br>
+                                    <b> {{ $company->name }} </b>
+                                </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>
