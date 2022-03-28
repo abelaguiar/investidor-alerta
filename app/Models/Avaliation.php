@@ -83,4 +83,28 @@ class Avaliation extends Model
     {
         return $this->where('authorize', false);
     }
+
+    public function positivePercentage()
+    {
+        $countAll = $this->authorized()->count();
+        $positive = $this->authorized()->where('avaliation_count', '>=', 7)->count();
+        
+        if ($positive > 0) {
+            $positive = ($positive / $countAll) * 100;
+        }
+
+        return round($positive, 1);
+    }
+
+    public function negativePercentage()
+    {
+        $countAll = $this->authorized()->count();
+        $negative = $this->authorized()->where('avaliation_count', '<', 7)->count();
+        
+        if ($negative > 0) {
+            $negative = ($negative / $countAll) * 100;
+        }
+
+        return round($negative, 1);
+    }
 }

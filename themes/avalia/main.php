@@ -111,398 +111,252 @@
 		
 		
 	<div class="row">
-	<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE DAY TRADE</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
+	
+		<div class="col-md-6 col-xl-3">
+                                <div class="card">
+                                    <h4 class="card-header display-6">Melhores empresas Avaliadas</h4>
+									<p class="card-text" style="margin-left: 17px"><small class="text-muted">nos útimos 30 dias </small></p>
+                                  
+								
+                                </div><!-- end card -->
+								<div class="card">
+                                    <div class="card-body">
+                      <div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-success alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
                     <div class="col-sm-8">
-                        <p class="text-black font-size-15">Análise Gráfica </p>
+                      <span style="font-size: 17px;">  <i class="uil-grin " style="font-size: 23px; color: #34c38f"></i><b> Empresa </b></span>
                        
                     </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
+                    
                 </div>
-				 <div class="row align-items-center">
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-success alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
                     <div class="col-sm-8">
-                        <p class="text-black font-size-15">Análise de Fluxo </i></p>
+                      <span style="font-size: 17px;">  <i class="uil-grin " style="font-size: 23px; color: #34c38f"></i><b> Empresa </b></span>
                        
                     </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
+                    
                 </div>
-				<div class="row align-items-center">
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-success alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
                     <div class="col-sm-8">
-                        <p class="text-black font-size-15">Em Geral </i></p>
+                      <span style="font-size: 17px;">  <i class="uil-grin " style="font-size: 23px; color: #34c38f"></i><b> Empresa </b></span>
                        
                     </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
+                    
                 </div>
-				<div class="row align-items-center">
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-success alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
                     <div class="col-sm-8">
-                        <p class="text-black font-size-15">Mercado Americano </i></p>
+                      <span style="font-size: 17px;">  <i class="uil-grin " style="font-size: 23px; color: #34c38f"></i><b> Empresa </b></span>
                        
                     </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
+					
+                    
                 </div>
-            </div>
-			</div>
-        </div>
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE SWING TRADE</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Análise Gráfica </p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 <div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Análise de Fluxo </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Em Geral </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Mercado Americano </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			</div>
-        </div>
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE ANÁLISE</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Fundamentalista </p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Mercado Americano </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			</div>
-        </div>
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE BUY AND HOLD</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                   
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				
-            </div>
-			</div>
-        </div>
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="mt-3 text-center">
+                                            <a href="#" class="text-primary font-size-14 fw-medium">View All Sources <i class="mdi mdi-chevron-right"></i></a></div>
 
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE CONTABILIDADE</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+                                    </div> <!-- end card-body-->
+                                </div>
+								
+                            </div>
+							
+							
+		<div class="col-md-6">
+
+                                <div class="card card-body">
+                                    <div class="border p-4 rounded">
+                            <div class="border-bottom pb-3">
+                                <p class="float-sm-end text-muted font-size-13">12 Janeiro, 2022</p>
+								
+                               <div class="flex-1">
+                                        <h5 class="font-size-20">GUSTAVO CUENCAS</h5>
+										Empresa: <span class="text-primary">CANAL DE ALTA</span><br>
+										Site: <span class="text-primary">www.canaldealta.com.br</span><br>
+										Produto Oferecido: <span class="text-primary">Nome do Produto</span><br>
+										
+										<br>
+                                    </div>
+									
+                                <p class="text-muted mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown... </p>
+                                
+								
+
+                            </div>
+
+                           
+
+                            
+
                         </div>
-                    </div>
-                </div>
-				 
-				
-				
-            </div>
-			</div>
-        </div>
-		
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE OPÇÕES</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+                                </div><!-- end card -->
+								 <div class="card card-body">
+                                    <div class="border p-4 rounded">
+                            <div class="border-bottom pb-3">
+                                <p class="float-sm-end text-muted font-size-13">12 Janeiro, 2022</p>
+								
+                               <div class="flex-1">
+                                        <h5 class="font-size-20">GUSTAVO CUENCAS</h5>
+										Empresa: <span class="text-primary">CANAL DE ALTA</span><br>
+										Site: <span class="text-primary">www.canaldealta.com.br</span><br>
+										Produto Oferecido: <span class="text-primary">Nome do Produto</span><br>
+										
+										<br>
+                                    </div>
+									
+                                <p class="text-muted mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown... </p>
+                                
+								
+
+                            </div>
+
+                           
+
+                            
+
                         </div>
-                    </div>
-                </div>
-				 
-				
-				
-            </div>
-			</div>
-			
-        </div>
-				<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CURSO DE POSITION TRADE</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Em Geral </p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
+                                </div><!-- end card -->
+								 <div class="card card-body">
+                                    <div class="border p-4 rounded">
+                            <div class="border-bottom pb-3">
+                                <p class="float-sm-end text-muted font-size-13">12 Janeiro, 2022</p>
+								
+                               <div class="flex-1">
+                                        <h5 class="font-size-20">GUSTAVO CUENCAS</h5>
+										Empresa: <span class="text-primary">CANAL DE ALTA</span><br>
+										Site: <span class="text-primary">www.canaldealta.com.br</span><br>
+										Produto Oferecido: <span class="text-primary">Nome do Produto</span><br>
+										
+										<br>
+                                    </div>
+									
+                                <p class="text-muted mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown... </p>
+                                
+								
+
+                            </div>
+
+                           
+
+                            
+
                         </div>
-                    </div>
-                </div>
-				 
-				
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Mercado Americano </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			</div>
-			<div class="card">
-			<h4 class="card-header mt-0">ROBÔ</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Day Trade </p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Swing Trade </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			</div>
-        </div>
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">ASSINATURAS</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Swing Trade </p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Day Trade </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Opções </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Relatórios Fundamentalistas </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Buy And Hold </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				<div class="row align-items-center">
-                    <div class="col-sm-8">
-                        <p class="text-black font-size-15">Mercado Americano </i></p>
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			</div>
-        </div>
-		<div class="col-lg-4 ">
-            <div class="card">
-			<h4 class="card-header mt-0">CLUBE DE INVESTIDORES</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                   
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				
-            </div>
-			</div>
-			<div class="card">
-			<h4 class="card-header mt-0">FUNDO DE INVESTIMENTOS</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                   
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				
-            </div>
-			</div>
-			 <div class="card">
-			<h4 class="card-header mt-0">CORRETORAS</h4>
-			<div class="card-body">
-			
-                <div class="row align-items-center">
-                    
-                    <div class="col-sm-4">
-                        <div class="mt-4 mt-sm-0">
-                          <a href="avaliacoes.php" class="btn btn-primary waves-effect waves-light">Ver Avaliação <i class="uil uil-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-				 
-				
-				
-            </div>
-			</div>
-        </div>
-		
-		
+                                </div><!-- end card -->
+                            </div>
        
         
+		<div class="col-md-6 col-xl-3">
+                                <div class="card">
+                                    <h4 class="card-header display-6">Piores empresas Avaliadas</h4>
+									<p class="card-text" style="margin-left: 17px"><small class="text-muted">nos útimos 30 dias </small></p>
+									
+                                  
+								
+                                </div><!-- end card -->
+								<div class="card">
+                                    <div class="card-body">
+                      <div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-danger alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
+                    <div class="col-sm-8">
+                      <span style="font-size: 17px;">  <i class="uil-frown " style="font-size: 23px;  color: #f46a6a"></i><b> Empresa </b></span>
+                       
+                    </div>
+                    
+                </div>
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-danger alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
+                    <div class="col-sm-8">
+                      <span style="font-size: 17px;">  <i class="uil-frown " style="font-size: 23px;  color: #f46a6a"></i><b> Empresa </b></span>
+                       
+                    </div>
+                    
+                </div>
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-danger alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
+                    <div class="col-sm-8">
+                      <span style="font-size: 17px;">  <i class="uil-frown " style="font-size: 23px;  color: #f46a6a"></i><b> Empresa </b></span>
+                       
+                    </div>
+                    
+                </div>
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
+								<div class="card">
+                                    
+                                   <div class="alert alert-border alert-border-danger alert-dismissible fade show" role="alert">
+									<div class="row align-items-center">
+									
+                    <div class="col-sm-8">
+                      <span style="font-size: 17px;">  <i class="uil-frown " style="font-size: 23px;  color: #f46a6a"></i><b> Empresa </b></span>
+                       
+                    </div>
+                    
+                </div>
+                                        
+                                    </div><!-- end card-header -->
+                                    <!-- end card-body -->
+                              
+                                </div><!-- end card -->
 
+                                    </div> <!-- end card-body-->
+                                </div>
+								
+                            </div>
        
 		
     </div>

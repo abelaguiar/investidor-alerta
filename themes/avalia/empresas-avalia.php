@@ -89,7 +89,7 @@
         </div>
     </div>
 <div class="row">
-        <div class="col-lg-12">
+        <div class="col-xl-8">
             <div class="card">
                 <div class="card-body">
 				
@@ -136,6 +136,12 @@
                                        
                                     </ul>
                                 </div>
+								<blockquote class="blockquote font-size-14 mb-0">
+                                                    <p>RESPOSTA DA AVALIAÇÃO</p>
+                                                    <footer class="blockquote-footer font-size-12 mt-0">
+                                                        Someone famous in <cite title="Source Title">Source Title</cite>
+                                                    </footer>
+                                                </blockquote>
 								
 
                             </div>
@@ -151,6 +157,53 @@
                 </div>
             </div>
         </div>
+		<div class="col-xl-4">
+                                <div class="card" >
+                                    <div class="card-body">
+
+                                        <div class="float-end">
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle" href="#" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton4">
+                                                    <a class="dropdown-item" href="#">Yearly</a>
+                                                    <a class="dropdown-item" href="#">Monthly</a>
+                                                    <a class="dropdown-item" href="#">Weekly</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="text-center" style="margin-top:20px; margin-button: 20px">
+                                           
+                                         
+                                       <h5 class="font-size-20">GUSTAVO CUENCAS</h5>
+                                           
+                                            
+                                        </div>
+                                       
+                                            <center>
+                                            
+                                          
+                                            <button type="button" class="btn btn-success waves-effect waves-light">
+                                                <i class="uil-angle-up"></i> 1256 Avaliações
+                                            </button>
+                                          
+                                            <button type="button" class="btn btn-danger waves-effect waves-light">
+                                                <i class="uil-angle-down"></i> 125 Avaliações
+                                            </button>
+                                        </center><br><br>
+                                            
+                                      
+
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
         
     </div>
 	

@@ -1,65 +1,88 @@
 <x-app-layout>
-    <div class="card">
-        <div class="card-header">
-            <h4 class="card-title">
-                Avaliações da Empresa {{ $company->name }}
-            </h4>
-        </div>
-        <div class="card-body">
-            @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
+    <div class="row">
+        <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <h4>
-                        <p>{{ $avaliation['content']->name }}</p>
-                    </h4>
-                    <br>
-                    Empresa: <span class="text-primary">{{ $company->name }}</span> <br>
-                    @if($company->links)
-                    Link: <a href="{{ $company->links }}" class="text-primary">{{ $company->links }}</a> <br>
-                    @endif
-                    Produto Oferecido: 
-                    <span class="text-primary">
-                        {{ $avaliation['content']->product->name }}
-                    </span>
-                    <br>
-                    <br>
-                    <p class="text-muted mb-4">{{ $avaliation['content']->description_experience_product }}</p>
-                    <div class="mt-3 row">
-                        <label>Avaliações do Usuário</label>
-                        <div class="col-md-3">
-                            <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
-                                @for ($i = 1; $i <= 10; $i++)
-                                    <option value="{{ $i }}" {{ $avaliation['content']->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
-                                @endfor
-                            </select>  
-                        </div>
-                    </div>
-                    @if (auth()->user()->isAdmin())
-                        <a type="button" class="btn btn-primary waves-effect waves-light" style="margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#addComments{{$key}}">
-                            <i class="fa fa-plus"></i> Adicionar Comentário
-                        </a>
-                        <br>
-                    @endif
-                    <br>
-                    @if ($avaliation['content']->comments->isNotEmpty())
-                        <b>Comentários: </b>
-                        <br>
-                        @foreach ($avaliation['content']->comments as $comment)
-                            <p>{{ $comment->description }}</p>
-                        @endforeach
-                    @endif
+                    <h4 class="card-title">Avaliações da Empresa {{ $company->name }}</h4>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-8 col-sm-8">
+            @forelse ($company->avaliationsWithOrderCount() as $key => $avaliation)
+                <div class="card">
+                    <div class="card-body">
+                        <h4>
+                            {{ $avaliation['content']->name }}
+                            <span class="float-sm-end text-muted font-size-13">
+                                {{ $avaliation['content']->created_at->formatLocalized('%A %d %B %Y') }}
+                            </span>
+                        </h4>
+                        <br>
+                        Empresa: <span class="text-primary">{{ $company->name }}</span> <br>
+                        @if($company->links)
+                        Link: <a href="{{ $company->links }}" class="text-primary">{{ $company->links }}</a> <br>
+                        @endif
+                        Produto Oferecido: 
+                        <span class="text-primary">
+                            {{ $avaliation['content']->product->name }}
+                        </span>
+                        <br>
+                        <br>
+                        <p class="text-muted mb-4">{{ $avaliation['content']->description_experience_product }}</p>
+                        <div class="mt-3 row">
+                            <label>Avaliações do Usuário</label>
+                            <div class="col-md-3">
+                                <select id="rating-1to10{{ $key }}" name="avaliation_count" autocomplete="off" disabled>
+                                    @for ($i = 1; $i <= 10; $i++)
+                                        <option value="{{ $i }}" {{ $avaliation['content']->avaliation_count == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                    @endfor
+                                </select>  
+                            </div>
+                        </div>
+                        @if (auth()->user()->isAdmin())
+                            <a type="button" class="btn btn-primary waves-effect waves-light" style="margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#addComments{{$key}}">
+                                <i class="fa fa-plus"></i> Adicionar Comentário
+                            </a>
+                            <br>
+                        @endif
+                        <br>
+                        @if ($avaliation['content']->comments->isNotEmpty())
+                            <b>Comentários: </b>
+                            <br>
+                            @foreach ($avaliation['content']->comments as $comment)
+                                <p>{{ $comment->description }}</p>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
             @empty
-            <div class="col-xl-12 col-sm-12">
                 <div class="card text-center">
                     <br>
                     Não tem avaliações
                     <br>
                     <br>
                 </div>
-            </div>
             @endforelse
+        </div>
+        <div class="col-xl-4 col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center" style="margin-top:20px; margin-button: 20px">
+                        <h5 class="font-size-20">{{ mb_strtoupper($company->name) }}</h5>
+                    </div>
+                    <center>
+                    <button type="button" class="btn btn-success waves-effect waves-light">
+                        <i class="uil-angle-up"></i> {{ $company->positiveAvaliationCount() }} Avaliações
+                    </button>
+                    <button type="button" class="btn btn-danger waves-effect waves-light">
+                        <i class="uil-angle-down"></i> {{ $company->negativeAvaliationCount() }} Avaliações
+                    </button>
+                    </center><br><br>
+                </div>
+            </div>
         </div>
     </div>
 
