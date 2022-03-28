@@ -39,7 +39,7 @@
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                         </form>
-                        <a href="{{ $avaliation->document }}" download class="btn btn-info waves-effect waves-light">
+                        <a href="{{ $avaliation->document }}" download class="btn btn-info waves-effect waves-light" style="margin-top: 5px;">
                             <i class="fa fa-download"></i> Documento
                         </a>
                     </div>

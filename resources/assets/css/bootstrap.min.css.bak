@@ -2567,7 +2567,6 @@ fieldset:disabled .btn {
  color:#fff; 
  background-color:#e9bb00;
  border-color:#e9bb00;
- margin: 5px;
 } 
 .btn-check:focus+.btn-primary,
 .btn-primary:focus,
