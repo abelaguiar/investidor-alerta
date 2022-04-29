@@ -26,7 +26,7 @@ class Product extends Model
 
     public function nameWithTopic()
     {
-        if (is_null($this->topics)) {
+        if (is_null($this->topics->first())) {
             return $this->name;
         }
 

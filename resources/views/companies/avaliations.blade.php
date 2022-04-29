@@ -17,7 +17,7 @@
                         <h4>
                             {{ $avaliation->name }}
                             <span class="float-sm-end text-muted font-size-13">
-                                {{ $avaliation->created_at->formatLocalized('%A %d %B %Y') }}
+                                {{ $avaliation->created_at->format('d/m/Y') }}
                             </span>
                         </h4>
                         <br>
