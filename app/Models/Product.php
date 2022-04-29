@@ -26,6 +26,10 @@ class Product extends Model
 
     public function nameWithTopic()
     {
+        if (is_null($this->topics)) {
+            return $this->name;
+        }
+
         return $this->name . ' - ' . $this->topics->first()->name;
     }
 }
