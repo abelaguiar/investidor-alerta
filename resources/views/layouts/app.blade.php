@@ -109,7 +109,7 @@
                                     <i class="uil-home-alt me-2"></i> Dashboard 
                                 </a>
                             </li>
-                            @if (auth()->user()->authorized)
+                            <!-- (auth()->user()->authorized) -->
                                 @if (auth()->user()->isAdmin())
                                     <li class="nav-item dropdown"> 
                                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"> 
@@ -157,7 +157,7 @@
                                         @endforeach
                                     </div>
                                 </li>
-                            @endif
+                            <!-- endif -->
                         </ul>
                     </div>
                 </nav>
