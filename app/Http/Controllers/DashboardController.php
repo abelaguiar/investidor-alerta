@@ -9,6 +9,8 @@ class DashboardController extends Controller
 {
     public function index(Avaliation $avaliation)
     {
+        $countAll = $avaliation->authorized()->count();
+
         $positive = $avaliation->positivePercentage();
         $negative = $avaliation->negativePercentage();
 
@@ -19,6 +21,7 @@ class DashboardController extends Controller
             ->limit(5)->get();
 
         return view('dashboard', compact(
+            'countAll',
             'positive', 'negative', 
             'positiveTopFive', 'negativeTopFive',
             'avaliationsTopFive'
