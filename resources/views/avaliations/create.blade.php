@@ -80,7 +80,7 @@
                         <div class="row mt-3">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Documento</label>
+                                    <label>Comprovação de compra</label>
                                     <input name="document" class="form-control" type="file">
                                 </div>
                             </div>

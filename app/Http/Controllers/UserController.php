@@ -70,7 +70,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        $roles = Role::all();
+
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -84,7 +86,8 @@ class UserController extends Controller
     {
         $user->fill([
             'name' => $request->name,
-            'email' => $request->email
+            'email' => $request->email,
+            'role_id' => $request->role_id
         ]);
 
         if ($request->input('password')) {

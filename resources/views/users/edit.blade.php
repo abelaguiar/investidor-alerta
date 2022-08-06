@@ -25,7 +25,11 @@
                                 <div class="form-group">
                                     <label>Gropo</label>
                                     <br>
-                                    ADMINISTRADOR
+                                    <select name="role_id" class="form-control">
+                                        @foreach ($roles as $role)
+                                            <option value="{{ $role->id }}" {{ $role->id == $user->role_id ? 'selected' : '' }}>{{ $role->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
